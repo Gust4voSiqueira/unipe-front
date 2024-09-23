@@ -3,6 +3,13 @@ button.button-component {
     border-radius: 6px;
     background-color: #565AA2;
 }
+
+button.button-component:disabled {
+    height: 48px;
+    border-radius: 6px;
+    background-color: #484b87;
+}
+
 button.button-component p {
     color: #fff;
     font-family: Roboto;
