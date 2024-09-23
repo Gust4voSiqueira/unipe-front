@@ -1,0 +1,10 @@
+button.button-component {
+    height: 48px;
+    border-radius: 6px;
+    background-color: #565AA2;
+}
+button.button-component p {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+}
