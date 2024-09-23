@@ -1,1 +1,40 @@
+.home-comtainer {
+    padding: 20px 18px;
+}
 
+.header-home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-home-image-info-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-home-image-info-user img {
+    width: 55px;
+    margin-right: 6px;
+}
+
+.header-home-info-user p, span {
+    color: #fff;
+    font-family: Poppins;
+}
+
+.header-home-info-user p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.header-home-info-user span {
+    font-size: 10px;
+    opacity: calc(80%);
+    font-weight: normal;
+}
+
+.header-home-container button {
+    background-color: transparent;
+}

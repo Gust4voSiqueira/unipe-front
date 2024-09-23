@@ -1,9 +1,11 @@
-import { AppRoutes } from './routes'
+import { TokenContextProvider } from './contexts/TokenContext'
+import { Routes } from './routes/index'
 
-function App() {
+export function App() {
   return (
-    <AppRoutes />
+      <TokenContextProvider>
+        <Routes />
+      </TokenContextProvider>
   )
 }
 
-export default App
