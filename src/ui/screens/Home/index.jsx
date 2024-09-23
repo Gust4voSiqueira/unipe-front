@@ -10,7 +10,7 @@ export function Home() {
     
     function handleLoggout() {
         removeToken()
-      }
+    }
 
     return (    
     <div  className='home-comtainer'>
@@ -18,8 +18,8 @@ export function Home() {
             <div className='header-home-image-info-user'>
                 <img src={Logo} alt="Logo da aplicação" />
                 <div className='header-home-info-user'>
-                    <p>Olá, Gustavo!</p>
-                    <span>06 Set, 2024</span>
+                    <p>Olá, Nome do Usuário!</p>
+                    <span>23 Set, 2024</span>
                 </div>
             </div>
 
