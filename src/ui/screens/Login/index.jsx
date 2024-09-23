@@ -28,6 +28,7 @@ const createUserFormSchema = z.object({
 export function Login() {
     const { login } = useUser()
     const [isError, setIsError] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(createUserFormSchema)
     })
@@ -38,9 +39,11 @@ export function Login() {
 
     async function handleLogin(user) {
         try {
+            setIsLoading(true)
             setIsError(false)
             await login(user)
         } catch (error) {
+            setIsLoading(false)
             setIsError(true)
         }
     }
@@ -60,7 +63,7 @@ export function Login() {
 
                 <span className='span-message'>Novo por aqui? <Link to="/register" className='link-register'>Cadastre-se</Link></span>
 
-                <ButtonComponent text="Entrar" />
+                <ButtonComponent text="Entrar" isLoading={isLoading} />
             </form>
         </div>
     )

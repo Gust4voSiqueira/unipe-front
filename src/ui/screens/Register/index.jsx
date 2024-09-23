@@ -1,13 +1,14 @@
 import './styles.css'
 import { z } from "zod"
-import { Link, useNavigate } from 'react-router-dom'
-import Logo from '../../../assets/logo.png'
+import { useState } from 'react'
+
 import { useForm } from 'react-hook-form'
+import Logo from '../../../assets/logo.png'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ButtonComponent } from '../../components/Button'
 import { useUser } from '../../../hooks/useUser'
-import { useState } from 'react'
 import { Alert } from '@mui/material'
 
 function HandleError({ isError }) {
@@ -29,9 +30,12 @@ const createUserFormSchema = z.object({
 })
 
 export function Register() {
-    const { registerUser } = useUser()
     const navigate = useNavigate()
+    const { registerUser } = useUser()
+
     const [isError, setIsError] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(createUserFormSchema)
     })
@@ -42,10 +46,12 @@ export function Register() {
 
     async function handleRegisterUser(user) {
         try {
+            setIsLoading(true)
             setIsError(false)
             await registerUser(user);
             navigate("/")
         } catch (error) {
+            setIsLoading(false)
             setIsError(true)
         }
     }
@@ -71,9 +77,9 @@ export function Register() {
                 <span>Confirmar senha</span>
                 <input type="password"  {...register("confirmPassword")} className={isErrorInput('confirmPassword')} />
 
-                <span className='span-message'>Já possui cadastro? <Link to="/login" className='link-register'>Entrar</Link></span>
+                <span className='span-message'>Já possui cadastro? <Link to="/" className='link-register'>Entrar</Link></span>
 
-                <ButtonComponent text="Cadastrar" />
+                <ButtonComponent text="Cadastrar" isLoading={isLoading} />
             </form>
         </div>
     )
