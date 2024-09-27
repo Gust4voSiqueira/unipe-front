@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080',
+  baseURL: 'https://mighty-taiga-59818-71b5d9144727.herokuapp.com',
   timeout: 10000, 
 })
 
