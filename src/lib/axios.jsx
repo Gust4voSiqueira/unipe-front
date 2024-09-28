@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://mighty-taiga-59818-71b5d9144727.herokuapp.com',
+  baseURL: 'https://unipe-16862c35e34b.herokuapp.com',
   timeout: 10000, 
 })
 
