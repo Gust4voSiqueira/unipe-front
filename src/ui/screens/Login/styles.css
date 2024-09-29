@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    padding:20px;
 }
 
 .error-container {
@@ -20,7 +21,9 @@
     flex-direction: column;
     justify-content: center;
     width: 90vw;
+    max-width: 400px;
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 .form-login-container span {
@@ -50,4 +53,29 @@
 .form-login-container .link-register {
     color: #8D8D99;
     text-decoration: none;
+}
+@media (min-width: 768px) {
+    .login-container{
+        flex-direction: row;
+    }
+
+    .login-container img {
+        margin-bottom: 0;
+        margin-right: 50px;
+        max-width: 250px;
+    }
+
+    .form-login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin-bottom: 20px;
+    }
+
+    .form-login-container input {
+        margin-right: 10px;
+    }
+
+
 }

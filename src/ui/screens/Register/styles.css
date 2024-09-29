@@ -47,3 +47,28 @@
     color: #8D8D99;
     text-decoration: none;
 }
+
+@media (min-width: 768px) {
+    .register-container {
+        flex-direction: row;
+    }
+
+    .register-container img {
+        margin-bottom: 0;
+        margin-right: 50px;
+        max-width: 250px;
+    }
+
+    .form-register-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin-bottom: 20px;
+        width: 350px;
+    }
+
+    .form-register-container input {
+        margin-right: 10px;
+    }
+}
