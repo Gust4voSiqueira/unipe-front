@@ -1,0 +1,11 @@
+.calendars-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.academic-calendar {
+    width: 94%;
+}

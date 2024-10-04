@@ -1,0 +1,25 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 14px;
+}
+
+.header-button {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: #222222;
+    cursor: pointer;
+}
+
+.header-title {
+    color: #FFFFFF;
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.div-header {
+    padding: 8px;
+}
