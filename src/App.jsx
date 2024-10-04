@@ -3,9 +3,8 @@ import { Routes } from './routes/index'
 
 export function App() {
   return (
-      <TokenContextProvider>
-        <Routes />
-      </TokenContextProvider>
+    <TokenContextProvider>
+      <Routes />
+    </TokenContextProvider>
   )
 }
-
