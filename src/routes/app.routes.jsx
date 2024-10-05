@@ -15,7 +15,7 @@ export function AppRoutes() {
             <Route exact path="/room" element={<RoomMap />} />
             <Route exact path="/uberona" element={<Uberona />} />
             <Route exact path="/passenger" element={<Passenger />} />
-            <Route path="/details/:idDriver" element={<DriverDetails />} />
+            <Route path="passenger/details/:idDriver" element={<DriverDetails />} />
         </Routes>
     </BrowserRouter>
   )
