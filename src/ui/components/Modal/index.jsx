@@ -20,7 +20,7 @@ export function ModalSelectedCity({ optionSelected, open, handleClose, updateCit
         aria-describedby="modal-modal-description"
       >
         <div className="modal-container">
-          <Box bgcolor="#29292E" width="50%" height="280px" margin="auto" borderRadius={6} padding={2}>
+          <Box bgcolor="#29292E" width="70%" height="280px" margin="auto" borderRadius={6} padding={2}>
             <Typography id="modal-modal-title" variant="h6" component="h2" color='#8D8D99' fontFamily="Roboto" fontSize={16} textAlign="center">
                 Selecione sua cidade
             </Typography>
