@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export function CardHome({ title, image, externalLink, link }) {
   if (externalLink) {
     return (
-      <Link to={link}>
+      <Link className="function-items" to={link}>
         <div className="function-items">
           <div className="text-container">
             <img className="items-img" src={image} alt={title} />
