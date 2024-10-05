@@ -2,7 +2,9 @@ import './styles.css'
 import Logo from '../../../assets/logo-small.svg'
 
 import { SignOut } from '@phosphor-icons/react'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
+
+import { useUser } from '../../../hooks/useUser'
 import { TokenContext } from '../../../contexts/TokenContext'
 import { Carousel } from '../../components/Carousel'
 import { CardHome } from '../../components/CardHome'
@@ -18,11 +20,29 @@ import PetsIcon from '../../../assets/pets-icon.svg'
 import MentoringIcon from '../../../assets/mentoring-icon.svg'
 
 export function Home() {
+  const [ user, setUser ] = useState({})
   const { removeToken } = useContext(TokenContext)
+  const { myUser } = useUser()
 
   function handleLoggout() {
     removeToken()
   }
+
+  async function getMyUser() {
+    try {
+      const response = await myUser()
+
+      setUser(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getMyUser()
+  }, [])
+
+  if(!user) return
 
   return (
     <div className="home-comtainer">
@@ -30,8 +50,8 @@ export function Home() {
         <div className="header-home-image-info-user">
           <img src={Logo} alt="Logo da aplicação" />
           <div className="header-home-info-user">
-            <p>Olá, Nome do Usuário!</p>
-            <span>23 Set, 2024</span>
+            <p>Olá, {user.name.split(' ')[0]}!</p>
+            <span>{user.dateNow}</span>
           </div>
         </div>
 

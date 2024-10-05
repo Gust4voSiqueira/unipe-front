@@ -2,6 +2,7 @@ import './styles.css'
 import { z } from 'zod'
 import { useState } from 'react'
 
+import InputMask from 'react-input-mask';
 import { useForm } from 'react-hook-form'
 import Logo from '../../../assets/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
@@ -29,7 +30,9 @@ const createUserFormSchema = z.object({
   course: z.string().min(3),
   password: z.string().min(7),
   confirmPassword: z.string().min(7),
-})
+  phone: z.string()
+    .regex(/^\+55 \d{2} \d{5}-\d{4}$/, "O telefone deve estar no formato +55 XX XXXXX-XXXX."),
+});
 
 export function Register() {
   const navigate = useNavigate()
@@ -56,6 +59,7 @@ export function Register() {
     try {
       setIsLoading(true)
       setIsError(false)
+
       await registerUser(user)
       navigate('/')
     } catch (error) {
@@ -86,6 +90,20 @@ export function Register() {
           {...register('name')}
           className={isErrorInput('name')}
         />
+
+        <span>Telefone</span>
+        <InputMask
+          mask="+55 99 99999-9999"
+          {...register('phone')}
+        >
+          {() => (
+            <input
+              type="text"
+              {...register('phone')}
+              className={isErrorInput('phone')}
+            />
+          )}
+        </InputMask>
 
         <span>Curso</span>
         <input
