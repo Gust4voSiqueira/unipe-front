@@ -1,0 +1,61 @@
+.uberona-warning-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.uberona-warning-container .uberona-warning-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.uberona-warning-container .uberona-warning-icon-container img {
+    width: 50px;
+    margin-bottom: 2px;
+}
+
+.uberona-warning-container .uberona-warning-icon-container .uberona-warning-alert-text {
+    font-family: "Poppins";
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.uberona-warning-container .uberona-warning-text {
+    color: #fff;
+    font-family: "Poppins";
+    font-size: 14px;
+    text-align: center;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.uberona-warning-container .uberona-warning-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 80%;
+}
+
+.uberona-warning-container .uberona-warning-button {
+    padding: 8px 18px;
+    border-radius: 6px;
+}
+
+.uberona-warning-container .uberona-warning-button span {
+    color: #fff;
+    font-size: 14px;
+}
+
+.uberona-warning-container .button-purple {
+    background-color: #565AA2;
+}
+
+.uberona-warning-container .button-green {
+    background-color: #00875F;
+}

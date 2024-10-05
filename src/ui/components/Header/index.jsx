@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom'
 import './styles.css'
+import { useNavigate } from 'react-router-dom'
 import { CaretLeft } from '@phosphor-icons/react'
 
 export function Header({ title }) {
