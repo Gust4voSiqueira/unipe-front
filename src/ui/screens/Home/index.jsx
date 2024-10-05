@@ -71,7 +71,7 @@ export function Home() {
           title="UBERONA"
           image={UberonaIcon}
           externalLink={false}
-          link=""
+          link="/uberona"
         />
         <CardHome
           title="AVA NEAD"

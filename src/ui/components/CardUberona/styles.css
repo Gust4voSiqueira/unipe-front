@@ -1,0 +1,28 @@
+.card-uberona-container {
+    background-color: #29292E;
+    border-radius: 6px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.card-uberona-container h1 {
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+
+.card-uberona-container p {
+    font-size: 12px;
+    color: #C4C4CC;
+    font-family: Roboto;
+    margin: 6px 0;
+}
+
+.card-uberona-container span {
+    font-size: 12px;
+    color: #C4C4CC;
+    font-family: Roboto;
+}
