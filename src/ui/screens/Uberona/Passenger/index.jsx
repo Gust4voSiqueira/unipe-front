@@ -6,10 +6,11 @@ import { CardUberona } from '../../../components/CardUberona'
 
 import { PencilSimple } from '@phosphor-icons/react'
 import { useUberona } from '../../../../hooks/useUberona'
+import { Loading } from '../../../components/Loading'
 
 function HandleCards(drivers) {
     if(drivers.length > 0) {
-        return drivers.map((driver, index) => <CardUberona key={index} name={driver.name} neighborhood={driver.neighborhood} days={driver.availableDays} />)
+        return drivers.map((driver, index) => <CardUberona key={index} id={driver.id} name={driver.name} neighborhood={driver.neighborhood} days={driver.availableDays} />)
     }
 
     return <p className='drivers-not-found-message'>Nenhum Motorista encontrado.</p>
@@ -53,10 +54,7 @@ export function Passenger() {
 
                 <div className='cards-container'>
                     { loading ? (
-                        <div class="loader-container">
-                        <div class="loader" />
-                        <p>Buscando Motoristas</p>
-                    </div>
+                        <Loading />
                     ) : HandleCards(drivers)}
                 </div>
             </div>
