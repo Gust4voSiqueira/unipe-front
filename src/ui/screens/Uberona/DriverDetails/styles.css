@@ -1,0 +1,19 @@
+.cards-driver-details-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 18px;
+}
+
+.driver-not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.driver-not-found-container .driver-not-found-message {
+    color: #fff;
+    font-family: Roboto;
+}

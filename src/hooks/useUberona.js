@@ -21,7 +21,24 @@ export const useUberona = () => {
     }
   }
 
+  async function getDriverDetails(driverId) {
+    try {
+      const { data } = await api.get(
+          `/motorist/getMotorist/${driverId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }
+      )
+
+      return data
+    } catch (error) {
+      throw error
+    }
+  }
+
   return {
-    getDrivers
+    getDrivers,
+    getDriverDetails
   }
 }

@@ -2,6 +2,10 @@
     background-color: #29292E;
     border-radius: 6px;
     padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .card-uberona-container h1 {

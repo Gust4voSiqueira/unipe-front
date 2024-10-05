@@ -1,4 +1,5 @@
 import './styles.css'
+import { useNavigate } from 'react-router-dom'
 
 function HandleDays(days) {
     return days.map((day, index) => (
@@ -8,13 +9,14 @@ function HandleDays(days) {
     ));
 }
 
-export function CardUberona({ name, neighborhood, days }) {
+export function CardUberona({ id, name, neighborhood, days }) {
+    const navigate = useNavigate()
+
     return (
-        <div className='card-uberona-container'>
+        <button className='card-uberona-container' onClick={() => navigate(`details/${id}`)}>
             <h1>{name}</h1>
-            <span>Dias disp.: {HandleDays(days)}</span>
-            <br />
+            <p>Dias disp.: {HandleDays(days)}</p>
             <span>{neighborhood}</span>
-        </div>
+        </button>
     )
 }
