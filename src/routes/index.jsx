@@ -8,7 +8,7 @@ export function Routes() {
   const { token } = useContext(TokenContext)
 
   return (
-    <div className='global-container'>
+    <div className="global-container">
       {token ? <AppRoutes /> : <AuthRoutes />}
     </div>
   )
