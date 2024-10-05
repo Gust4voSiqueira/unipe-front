@@ -1,5 +1,3 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
 import { Home } from '../ui/screens/Home'
 import { Calendar } from "../ui/screens/Calendar";
 import { RoomMap } from "../ui/screens/RoomMap";
