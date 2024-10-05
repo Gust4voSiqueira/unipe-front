@@ -50,7 +50,7 @@ export function Home() {
         <div className="header-home-image-info-user">
           <img src={Logo} alt="Logo da aplicação" />
           <div className="header-home-info-user">
-            <p>Olá, {user.name.split(' ')[0]}!</p>
+            <p>Olá, {user.name?.split(' ')[0]}!</p>
             <span>{user.dateNow}</span>
           </div>
         </div>
