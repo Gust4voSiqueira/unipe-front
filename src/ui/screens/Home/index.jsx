@@ -75,13 +75,13 @@ export function Home() {
           title="MAPA DE SALAS"
           image={MapIcon}
           externalLink={false}
-          link="/roomMap"
+          link="/room"
         />
         <CardHome
           title="CALENDÁRIO ACADÊMICO"
           image={CalendarIcon}
           externalLink={false}
-          link="/academicCalendar"
+          link="/calendar"
         />
         <CardHome
           title="ACHADOS E PERDIDOS"

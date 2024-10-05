@@ -8,8 +8,8 @@ export function AppRoutes() {
     <BrowserRouter>
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/academicCalendar" element={<Calendar />} />
-            <Route exact path="/roomMap" element={<RoomMap />} />
+            <Route exact path="/calendar" element={<Calendar />} />
+            <Route exact path="/room" element={<RoomMap />} />
         </Routes>
     </BrowserRouter>
   )
