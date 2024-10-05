@@ -3,17 +3,16 @@ import { api } from '../lib/axios'
 import { TokenContext } from '../contexts/TokenContext'
 
 export const useUberona = () => {
-    const { token } = useContext(TokenContext)
+  const { token } = useContext(TokenContext)
 
-    async function getDrivers() {
+  async function getDrivers(city) {
     try {
-      const response = await api.get(
-        '/motorist/listMotorists/Luziânia', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }
-      )
+      console.log(city)
+      const response = await api.get(`/motorist/listMotorists/${city}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
 
       return response
     } catch (error) {
@@ -23,13 +22,11 @@ export const useUberona = () => {
 
   async function getDriverDetails(driverId) {
     try {
-      const { data } = await api.get(
-          `/motorist/getMotorist/${driverId}`, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }
-      )
+      const { data } = await api.get(`/motorist/getMotorist/${driverId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
 
       return data
     } catch (error) {
@@ -39,6 +36,6 @@ export const useUberona = () => {
 
   return {
     getDrivers,
-    getDriverDetails
+    getDriverDetails,
   }
 }

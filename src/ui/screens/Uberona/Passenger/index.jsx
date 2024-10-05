@@ -7,57 +7,79 @@ import { CardUberona } from '../../../components/CardUberona'
 import { PencilSimple } from '@phosphor-icons/react'
 import { useUberona } from '../../../../hooks/useUberona'
 import { Loading } from '../../../components/Loading'
+import { ModalSelectedCity } from '../../../components/Modal'
 
 function HandleCards(drivers) {
-    if(drivers.length > 0) {
-        return drivers.map((driver, index) => <CardUberona key={index} id={driver.id} name={driver.name} neighborhood={driver.neighborhood} days={driver.availableDays} />)
-    }
+  if (drivers.length > 0) {
+    return drivers.map((driver, index) => (
+      <CardUberona
+        key={index}
+        id={driver.id}
+        name={driver.name}
+        neighborhood={driver.neighborhood}
+        days={driver.availableDays}
+      />
+    ))
+  }
 
-    return <p className='drivers-not-found-message'>Nenhum Motorista encontrado.</p>
+  return (
+    <p className="drivers-not-found-message">Nenhum Motorista encontrado.</p>
+  )
 }
 
 export function Passenger() {
-    const { getDrivers } = useUberona()
-    const [ loading, setLoading ] = useState(true)
-    const [ drivers, setDrivers ] = useState([])
+  const { getDrivers } = useUberona()
+  const [loading, setLoading] = useState(true)
+  const [drivers, setDrivers] = useState([])
+  const [openModal, setOpenModal] = useState(false)
+  const [selectedCity, setSelectedCity] = useState("Luziânia")
 
-    async function listDrivers() {
-        try {
-            const response = await getDrivers()
+  function updateCity(newCity) {
+    setSelectedCity(newCity)
+    setOpenModal(false)
+  }
 
-            setDrivers(response.data)
-            setLoading(false)
-        } catch (error) {
-            setLoading(false)
-            console.log(error)
-        }
+  async function listDrivers() {
+    try {
+      setLoading(true)
+      const response = await getDrivers(selectedCity)
+
+      setDrivers(response.data)
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
     }
+  }
 
-    useEffect(() => {
-        listDrivers()
-    }, [])
+  useEffect(() => {
+    listDrivers()
+  }, [selectedCity])
 
-    return (
-        <>
-            <Header title="Passageiro" />
+  return (
+    <>
+      <Header title="Passageiro" />
+      <ModalSelectedCity
+        optionSelected={selectedCity}
+        open={openModal}
+        handleClose={() => setOpenModal(false)}
+        updateCity={updateCity}
+      />
 
-            <div className='passenger-container'>
-                <div className='city-selected'>
-                    <span>A cidade selecionada foi</span>
-                    <h1>Cidade Ocidental</h1>
-                    <button>
-                        <PencilSimple size={16} color='#C4C4CC' />
-                    </button>
-                </div>
+      <div className="passenger-container">
+        <div className="city-selected">
+          <span>A cidade selecionada foi</span>
+          <h1>{selectedCity}</h1>
+          <button onClick={() => setOpenModal(true)}>
+            <PencilSimple size={16} color="#C4C4CC" />
+          </button>
+        </div>
 
-                <h2>Caronas Disponíveis</h2>
+        <h2>Caronas Disponíveis</h2>
 
-                <div className='cards-container'>
-                    { loading ? (
-                        <Loading />
-                    ) : HandleCards(drivers)}
-                </div>
-            </div>
-        </>
-    )
+        <div className="cards-container">
+          {loading ? <Loading /> : HandleCards(drivers)}
+        </div>
+      </div>
+    </>
+  )
 }
