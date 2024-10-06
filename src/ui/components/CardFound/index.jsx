@@ -6,7 +6,7 @@ import './style.css'
 export function CardFound({ title, direction, identifier }) {
   if ( identifier) {
     return (
-        <div className="function-items">
+        <div className="card-found-function-items">
         <div className="container-text">
         <p className="items-text">{title}</p>
           <p className="items-direction">{direction}</p>
@@ -22,7 +22,7 @@ export function CardFound({ title, direction, identifier }) {
   }
 
   return (
-    <div className="function-items">
+    <div className="card-found-function-items">
       <div className="container-text">
        <p className="items-text">{title}</p>
         <p className="items-direction">{direction}</p>

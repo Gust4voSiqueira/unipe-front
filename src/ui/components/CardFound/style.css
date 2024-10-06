@@ -1,4 +1,4 @@
-.function-items{
+.card-found-function-items{
     width: 100%;
     height: 100px;
     background-color: #212223  ;
@@ -9,18 +9,18 @@
     justify-content: space-between;
     align-items: center;
   }
-  .container-text {
+  .card-found-function-items .container-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  .items-direction{
+  .card-found-function-items .items-direction{
     margin-left: 12px;
     display: block;
    color: #969595;
 
   }
-  .items-text{
+  .card-found-function-items .items-text{
     display: block;
     color: #f8f4f4 ;
     font-size: 15px;
@@ -29,16 +29,16 @@
     font-weight: 500;
     font-style: normal;
   }
-  .icon{
+  .card-found-function-items .icon{
     font-size: 100px;
     color: #d5d3d3 ;
   }
-  .button-icon{
+  .card-found-function-items .button-icon{
     background-color: #f50f22 ;
     border-radius: 6px;
     padding: 10px;
     cursor: pointer;
   }
-  .button-2{
+  .card-found-function-items .button-2{
     background-color: #0a7421;
   }
