@@ -13,7 +13,7 @@ export function LostAndFound() {
           <p className='contain-title'>Achados e Perdidos</p>
         </div>
       <div className='center'>
-        <div className='div-p'><p className='p-new'>Clique aquí para <a href=''>cadastrar um novo item</a></p></div>
+        <div className='div-p'><p className='p-new'>Clique aqui para <a href=''>cadastrar um novo item</a></p></div>
       </div>
       <div className='div-functions'>
       <CardFound

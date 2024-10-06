@@ -16,12 +16,9 @@
   }
   .card-found-function-items .items-direction{
     margin-left: 12px;
-    display: block;
-   color: #969595;
-
+    color: #969595;
   }
   .card-found-function-items .items-text{
-    display: block;
     color: #f8f4f4 ;
     font-size: 15px;
     margin-left: 12px;
@@ -38,7 +35,11 @@
     border-radius: 6px;
     padding: 10px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .card-found-function-items .button-2{
-    background-color: #0a7421;
+    background-color: #00875F;
   }

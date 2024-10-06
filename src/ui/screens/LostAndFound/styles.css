@@ -44,7 +44,8 @@
 
 .div-p a {
     text-decoration: none;
-    color: #0a7421;
+    font-weight: bold;
+    color: #00875F;
 }
 .div-contain{
     padding: 30px;
