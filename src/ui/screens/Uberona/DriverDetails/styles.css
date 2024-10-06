@@ -1,0 +1,46 @@
+.cards-driver-details-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 18px;
+}
+
+.driver-not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.driver-not-found-container .driver-not-found-message {
+    color: #fff;
+    font-family: Roboto;
+}
+
+.cards-driver-details-container a {
+    text-decoration: none;
+}
+
+.cards-driver-details-container a div {
+    height: 48px;
+    border-radius: 6px;
+    background-color: #00875F;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-driver-details-container a:disabled {
+    height: 48px;
+    border-radius: 6px;
+    background-color: #027150;
+}
+
+.cards-driver-details-container a span {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+    margin-right: 4px;
+}
