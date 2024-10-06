@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Uberona } from '../ui/screens/Uberona'
 import { Passenger } from '../ui/screens/Uberona/Passenger'
 import { DriverDetails } from '../ui/screens/Uberona/DriverDetails'
+import { Driver } from '../ui/screens/Uberona/Driver'
 
 export function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ export function AppRoutes() {
         <Route exact path="/room" element={<RoomMap />} />
         <Route exact path="/uberona" element={<Uberona />} />
         <Route exact path="/passenger" element={<Passenger />} />
+        <Route exact path="/driver" element={<Driver />} />
         <Route path="passenger/details/:idDriver" element={<DriverDetails />} />
       </Routes>
     </BrowserRouter>
