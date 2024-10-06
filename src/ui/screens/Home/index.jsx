@@ -107,7 +107,7 @@ export function Home() {
           title="ACHADOS E PERDIDOS"
           image={LostIcon}
           externalLink={false}
-          link="/LostAndFound"
+          link="/lostAndFound"
         />
         <CardHome
           title="DOAÇÃO DE PETS"

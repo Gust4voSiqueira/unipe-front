@@ -13,7 +13,7 @@ export function CardFound({ title, direction, identifier }) {
         </div>
         <a href="" className="a-container" target="_blank" rel="noreferrer">
           <button className="button-icon button-2 ">
-            <WhatsappLogo size={32} />
+            <WhatsappLogo size={24} color="#fff" />
           </button>
         </a>
       </div>
@@ -29,7 +29,7 @@ export function CardFound({ title, direction, identifier }) {
       </div>
       <a href="" className="a-container" target="_blank" rel="noreferrer">
         <button className="button-icon">
-            <Trash size={32} />
+            <Trash size={24} color="#fff" />
         </button>
       </a>
     </div>
