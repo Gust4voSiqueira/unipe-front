@@ -40,7 +40,7 @@ const createUserFormSchema = z.object({
 
 export function Register() {
   const navigate = useNavigate()
-  const { registerUser } = useUser()
+  const { login, registerUser } = useUser()
 
   const [isError, setIsError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -65,7 +65,8 @@ export function Register() {
       setIsError(false)
 
       await registerUser(user)
-      navigate('/')
+      await login(user)
+      navigate("/")
     } catch (error) {
       setIsLoading(false)
       setIsError(true)
@@ -134,7 +135,7 @@ export function Register() {
           </Link>
         </span>
 
-        <ButtonComponent text="Cadastrar" isLoading={isLoading} />
+        <ButtonComponent text="Cadastrar e acessar" isLoading={isLoading} />
       </form>
     </div>
   )
