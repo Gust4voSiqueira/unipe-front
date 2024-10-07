@@ -1,49 +1,107 @@
-import { CaretLeft } from '@phosphor-icons/react'
-import './styles.css';
-import { CardFound } from '../../components/CardFound';
+import './styles.css'
+import { useState, useEffect } from 'react'
+import { Header } from '../../components/Header'
+import { Loading } from '../../components/Loading'
+import { CardFound } from '../../components/CardFound'
+import { useLostAndFound } from '../../../hooks/useLostAndFound'
+import { ModalFoundAndLost } from '../../components/ModalFoundAndLost'
 
-export function LostAndFound() {
-  return (
-    <>
-      <div className='div-contain'>
-        <div className='contain-2'>
-          <button className='contain-btn'>
-          <CaretLeft size={32} />
-          </button>
-          <p className='contain-title'>Achados e Perdidos</p>
-        </div>
-      <div className='center'>
-        <div className='div-p'><p className='p-new'>Clique aqui para <a href=''>cadastrar um novo item</a></p></div>
-      </div>
-      <div className='div-functions'>
-      <CardFound
-           title="UBERONA"
-           direction="perto do bloco d"
-           identifier={false}
-        />
-        <CardFound
-           title="UBERONA"
-           direction="perto do bloco d"
-           identifier={false}
-        />
-        <CardFound
-           title="UBERONA"
-           direction="perto do bloco d"
-           identifier={true}
-        />
-        <CardFound
-           title="UBERONA"
-           direction="perto do bloco d"
-           identifier={true}
-        />
-        <CardFound
-           title="UBERONA"
-           direction="perto do bloco d"
-           identifier={true}
-        />
-      </div>
-      </div>
-    </>
-  );
+function HandleCardsLostAndFound({ items, removeItem }) {
+  return items.map((item, index) => (
+    <CardFound
+      key={index}
+      itemId={item.id}
+      title={item.item}
+      direction={item.local}
+      phone={item.phone}
+      isAddedByCurrentUser={item.isAddedByCurrentUser}
+      removeItem={removeItem}
+    />
+  ))
 }
 
+export function LostAndFound() {
+  const { getItems, registerNewItem, deleteItem } = useLostAndFound()
+  const [loading, setLoading] = useState(true)
+  const [items, setItems] = useState([])
+  const [isOpenModal, setIsOpenModal] = useState(false)
+
+  function handleModal() {
+    setIsOpenModal(!isOpenModal)
+  }
+
+  async function getListItems() {
+    try {
+      const response = await getItems()
+
+      setItems(response)
+      setIsOpenModal(false)
+      setLoading(false)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async function handleCreateItem(item) {
+    try {
+      await registerNewItem(item)
+      getListItems()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  async function handleRemoveItem(itemId) {
+    try {
+      await deleteItem(itemId)
+      getListItems()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getListItems()
+  }, [])
+
+  if (loading)
+    return (
+      <>
+        <Header title="Achados e Perdidos" />
+        <div className="lost-and-found-div-contain">
+          <Loading message="Buscando itens" />
+        </div>
+      </>
+    )
+
+  return (
+    <>
+      <Header title="Achados e Perdidos" />
+
+      {isOpenModal && (
+        <ModalFoundAndLost
+          isOpen={isOpenModal}
+          handleCloseModal={handleModal}
+          handleCreateItem={handleCreateItem}
+        />
+      )}
+
+      <div className="lost-and-found-div-contain">
+        <div className="lost-and-found-center">
+          <p className="lost-and-found-p-new">
+            Clique aqui para{' '}
+            <button onClick={handleModal}>cadastrar um novo item</button>
+          </p>
+        </div>
+        {items.length > 0 ? (
+          <HandleCardsLostAndFound
+            items={items}
+            removeItem={handleRemoveItem}
+          />
+        ) : (
+          <p className="lost-and-found-text-message">Nenhum item encontrado.</p>
+        )}
+      </div>
+    </>
+  )
+}
