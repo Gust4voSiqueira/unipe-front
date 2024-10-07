@@ -1,17 +1,22 @@
 import { useContext } from 'react'
 import { api } from '../lib/axios'
 import { TokenContext } from '../contexts/TokenContext'
+import { formatPhoneNumber } from '../utils/formatPhone'
 
 export const useUser = () => {
-  const { addToken } = useContext(TokenContext)
+  const { addToken, token } = useContext(TokenContext)
 
   async function registerUser(userRegister) {
     try {
-      const response = await api.post('/auth/register', userRegister, {
-        headers: {
-          'Content-type': 'application/json',
+      const response = await api.post(
+        '/auth/register',
+        { ...userRegister, phone: formatPhoneNumber(userRegister.phone) },
+        {
+          headers: {
+            'Content-type': 'application/json',
+          },
         },
-      })
+      )
 
       return response.data
     } catch (error) {
@@ -34,8 +39,27 @@ export const useUser = () => {
     }
   }
 
+  async function myUser() {
+    try {
+      const { data } = await api.post(
+        '/user/myUser',
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+
+      return data
+    } catch (error) {
+      return error
+    }
+  }
+
   return {
     registerUser,
     login,
+    myUser,
   }
 }

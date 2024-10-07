@@ -7,7 +7,7 @@ import { CardUberona } from '../../../components/CardUberona'
 import { PencilSimple } from '@phosphor-icons/react'
 import { useUberona } from '../../../../hooks/useUberona'
 import { Loading } from '../../../components/Loading'
-import { ModalSelectedCity } from '../../../components/Modal'
+import { ModalSelectedCity } from '../../../components/ModalSelectedCity'
 
 function HandleCards(drivers) {
   if (drivers.length > 0) {
@@ -32,7 +32,7 @@ export function Passenger() {
   const [loading, setLoading] = useState(true)
   const [drivers, setDrivers] = useState([])
   const [openModal, setOpenModal] = useState(false)
-  const [selectedCity, setSelectedCity] = useState("Luziânia")
+  const [selectedCity, setSelectedCity] = useState('Luziânia')
 
   function updateCity(newCity) {
     setSelectedCity(newCity)
@@ -77,7 +77,11 @@ export function Passenger() {
         <h2>Caronas Disponíveis</h2>
 
         <div className="cards-container">
-          {loading ? <Loading /> : HandleCards(drivers)}
+          {loading ? (
+            <Loading message="Buscando motoristas." />
+          ) : (
+            HandleCards(drivers)
+          )}
         </div>
       </div>
     </>

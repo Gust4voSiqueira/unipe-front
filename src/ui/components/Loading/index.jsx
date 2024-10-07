@@ -1,10 +1,10 @@
 import './styles.css'
 
-export function Loading() {
+export function Loading({ message }) {
   return (
     <div className="loader-container">
       <div className="loader" />
-      <p>Buscando Motoristas</p>
+      <p>{message}</p>
     </div>
   )
 }
