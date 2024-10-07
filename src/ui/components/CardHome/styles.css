@@ -12,17 +12,17 @@
   .function-items a{
     text-decoration: none;
   }
-  .text-container {
+  .function-items .text-container {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .items-img{
+  .function-items .items-img{
     width: 60px;
     height: 60px;
     border-radius: 100%;
   }
-  .items-text{
+  .function-items .items-text{
     color: #d5d3d3 ;
     font-size: 15px;
     margin-left: 12px;
@@ -30,11 +30,11 @@
     font-weight: 500;
     font-style: normal;
   }
-  .icon{
+  .function-items .icon{
     font-size: 100px;
     color: #d5d3d3 ;
   }
-  .button-icon{
+  .function-items .button-icon{
     background-color: #151515 ;
     border-radius: 6px;
     padding: 10px;
