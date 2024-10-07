@@ -8,11 +8,15 @@ export const useUser = () => {
 
   async function registerUser(userRegister) {
     try {
-      const response = await api.post('/auth/register', {...userRegister, phone: formatPhoneNumber(userRegister.phone)}, {
-        headers: {
-          'Content-type': 'application/json',
+      const response = await api.post(
+        '/auth/register',
+        { ...userRegister, phone: formatPhoneNumber(userRegister.phone) },
+        {
+          headers: {
+            'Content-type': 'application/json',
+          },
         },
-      })
+      )
 
       return response.data
     } catch (error) {
@@ -37,11 +41,15 @@ export const useUser = () => {
 
   async function myUser() {
     try {
-      const { data } = await api.post('/user/myUser', {}, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
+      const { data } = await api.post(
+        '/user/myUser',
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
 
       return data
     } catch (error) {
@@ -52,6 +60,6 @@ export const useUser = () => {
   return {
     registerUser,
     login,
-    myUser
+    myUser,
   }
 }

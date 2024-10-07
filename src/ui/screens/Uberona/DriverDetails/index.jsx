@@ -80,7 +80,11 @@ export function DriverDetails() {
       <Header title={driver?.name || 'Uberona'} />
 
       <div className="cards-driver-details-container">
-        {loading ? <Loading /> : HandleCardsDetailsDriver(driver)}
+        {loading ? (
+          <Loading message="Buscando dados do motorista." />
+        ) : (
+          HandleCardsDetailsDriver(driver)
+        )}
       </div>
     </>
   )

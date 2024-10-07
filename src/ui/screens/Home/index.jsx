@@ -20,7 +20,7 @@ import PetsIcon from '../../../assets/pets-icon.svg'
 import MentoringIcon from '../../../assets/mentoring-icon.svg'
 
 export function Home() {
-  const [ user, setUser ] = useState({})
+  const [user, setUser] = useState({})
   const { removeToken } = useContext(TokenContext)
   const { myUser } = useUser()
 
@@ -42,7 +42,7 @@ export function Home() {
     getMyUser()
   }, [])
 
-  if(!user) return
+  if (!user) return
 
   return (
     <div className="home-comtainer">
@@ -107,7 +107,7 @@ export function Home() {
           title="ACHADOS E PERDIDOS"
           image={LostIcon}
           externalLink={false}
-          link=""
+          link="/lostAndFound"
         />
         <CardHome
           title="DOAÇÃO DE PETS"

@@ -1,12 +1,11 @@
 .div-carousel{  
   display: flex;
   justify-content: center;
-
 }
 
 .home-comtainer {
-    padding: 20px 18px;
-    min-height: 100vh;
+  padding: 20px 18px;
+  min-height: 100vh;
 }
 
 .header-home-container {
