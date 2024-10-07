@@ -9,6 +9,7 @@ import Logo from '../../../assets/logo.png'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ButtonComponent } from '../../components/Button'
 import { useUser } from '../../../hooks/useUser'
+import { isErrorInput } from '../../../utils/isErrorInput'
 
 function HandleError({ isError }) {
   return (
@@ -39,12 +40,6 @@ export function Login() {
     resolver: zodResolver(createUserFormSchema),
   })
 
-  function isErrorInput(input) {
-    return Object.keys(errors).some((value) => value === input)
-      ? 'input-error'
-      : 'input-normal'
-  }
-
   async function handleLogin(user) {
     try {
       setIsLoading(true)
@@ -70,14 +65,14 @@ export function Login() {
         <input
           type="text"
           {...register('email')}
-          className={isErrorInput('email')}
+          className={isErrorInput(errors, 'email')}
         />
 
         <span>Senha</span>
         <input
           type="password"
           {...register('password')}
-          className={isErrorInput('password')}
+          className={isErrorInput(errors, 'password')}
         />
 
         <span className="span-message">

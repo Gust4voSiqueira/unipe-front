@@ -33,8 +33,36 @@ export const useUberona = () => {
     }
   }
 
+  async function createNewDriver(driver) {
+    try {
+      await api.post('/motorist/createMotorist', driver, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+
+  async function isExistsCarRegistered() {
+    try {
+      const { data } = await api.get('/motorist/isExistsCarRegistered', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+
+      return data
+    } catch (error) {
+      throw error
+    }
+  }
+
   return {
     getDrivers,
     getDriverDetails,
+    createNewDriver,
+    isExistsCarRegistered
   }
 }
