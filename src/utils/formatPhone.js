@@ -1,3 +1,3 @@
 export function formatPhoneNumber(phone) {
-    return phone.replace(/[^\d+]/g, '');
-  }
+  return phone.replace(/[^\d+]/g, '')
+}

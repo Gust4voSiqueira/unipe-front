@@ -7,7 +7,6 @@ export const useUberona = () => {
 
   async function getDrivers(city) {
     try {
-      console.log(city)
       const response = await api.get(`/motorist/listMotorists/${city}`, {
         headers: {
           Authorization: `Bearer ${token}`,
