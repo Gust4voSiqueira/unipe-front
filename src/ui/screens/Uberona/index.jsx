@@ -23,7 +23,10 @@ export function Uberona() {
         </p>
 
         <div className="uberona-warning-buttons-container">
-          <button className="uberona-warning-button button-purple">
+          <button
+            className="uberona-warning-button button-purple"
+            onClick={() => navigate('/driver')}
+          >
             <span>Sou Motorista</span>
           </button>
           <button
