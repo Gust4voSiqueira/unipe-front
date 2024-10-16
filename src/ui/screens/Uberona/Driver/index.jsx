@@ -44,7 +44,7 @@ export function Driver() {
 
   return (
     <>
-      <Header title="Motorista" />
+      <Header title="Motorista" link="/uberona" />
       <div className='driver-list-cars-container'>
           <div className='driver-list-cars-card'>
             <div>

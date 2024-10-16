@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { api } from '../lib/axios'
-import { useNavigate } from 'react-router-dom'
+
 import { TokenContext } from '../contexts/TokenContext'
+import { useApi } from './useApi'
 
 export const useLostAndFound = () => {
-  const navigate = useNavigate()
+  const api = useApi()
   const { token } = useContext(TokenContext)
 
   async function getItems() {

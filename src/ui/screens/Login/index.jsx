@@ -12,6 +12,7 @@ import { useUser } from '../../../hooks/useUser'
 import { isErrorInput } from '../../../utils/isErrorInput'
 
 function HandleError({ isError }) {
+  console.log(isError)
   return (
     isError && (
       <div className="error-container">
@@ -46,6 +47,7 @@ export function Login() {
       setIsError(false)
       await login(user)
     } catch (error) {
+      console.log(error)
       setIsLoading(false)
       setIsError(true)
     }

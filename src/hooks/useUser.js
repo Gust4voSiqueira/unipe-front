@@ -1,9 +1,11 @@
 import { useContext } from 'react'
-import { api } from '../lib/axios'
+
 import { TokenContext } from '../contexts/TokenContext'
 import { formatPhoneNumber } from '../utils/formatPhone'
+import { useApi } from './useApi'
 
 export const useUser = () => {
+  const api = useApi()
   const { addToken, token } = useContext(TokenContext)
 
   async function registerUser(userRegister) {
@@ -20,7 +22,7 @@ export const useUser = () => {
 
       return response.data
     } catch (error) {
-      return error
+      throw new error
     }
   }
 
@@ -35,7 +37,7 @@ export const useUser = () => {
 
       return response
     } catch (error) {
-      return error
+      throw new error
     }
   }
 
@@ -53,7 +55,7 @@ export const useUser = () => {
 
       return data
     } catch (error) {
-      return error
+      throw new error
     }
   }
 
