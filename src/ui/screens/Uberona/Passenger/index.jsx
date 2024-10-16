@@ -57,7 +57,7 @@ export function Passenger() {
 
   return (
     <>
-      <Header title="Passageiro" />
+      <Header title="Passageiro" link="/uberona" />
       <ModalSelectedCity
         optionSelected={selectedCity}
         open={openModal}

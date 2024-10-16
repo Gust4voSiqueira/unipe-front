@@ -9,7 +9,7 @@ export function Uberona() {
 
   return (
     <>
-      <Header title="Uberona" />
+      <Header title="Uberona" link="/" />
 
       <div className="uberona-warning-container">
         <div className="uberona-warning-icon-container">

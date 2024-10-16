@@ -1,8 +1,10 @@
 import { useContext } from 'react'
-import { api } from '../lib/axios'
+
 import { TokenContext } from '../contexts/TokenContext'
+import { useApi } from './useApi'
 
 export const useUberona = () => {
+  const api = useApi()
   const { token } = useContext(TokenContext)
 
   async function getDrivers(city) {
