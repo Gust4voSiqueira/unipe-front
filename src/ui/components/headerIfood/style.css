@@ -1,0 +1,27 @@
+.ifood-center{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0 !important;
+}
+.ifood-btn-finCompras{
+    padding: 5px 19px;
+    color: #FFF;
+    border-radius:7px;
+
+}
+.ifood-offline{
+    color: #f50f22!important;
+}
+.ifood-btn1{
+    background-color: #f73c3c;
+}
+.ifood-btn2{
+    background-color: #0d7c2e;
+}
+.ifood-title{
+    color: #d6d5d5;
+}
+.ifood-p-new{
+    margin: 10px 0 !important;
+}
