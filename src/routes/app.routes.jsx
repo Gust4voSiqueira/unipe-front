@@ -8,6 +8,7 @@ import { DriverDetails } from '../ui/screens/Uberona/DriverDetails'
 import { Ifood } from "../ui/screens/Ifood";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Driver } from '../ui/screens/Uberona/Driver'
 
 export function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ export function AppRoutes() {
         <Route exact path="/room" element={<RoomMap />} />
         <Route exact path="/uberona" element={<Uberona />} />
         <Route exact path="/passenger" element={<Passenger />} />
+        <Route exact path="/driver" element={<Driver />} />
         <Route path="passenger/details/:idDriver" element={<DriverDetails />} />
         <Route exact path="/lostAndFound" element={<LostAndFound />} />
         <Route exact path="/ifood" element={<Ifood />} />
