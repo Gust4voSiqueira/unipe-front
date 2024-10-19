@@ -66,7 +66,7 @@ export function Register() {
 
       await registerUser(user)
       await login(user)
-      navigate("/")
+      navigate('/')
     } catch (error) {
       setIsLoading(false)
       setIsError(true)

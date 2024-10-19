@@ -1,88 +1,69 @@
 import './styles.css'
-import { z } from 'zod'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useState, useEffect } from 'react'
+import { Trash, PencilSimple } from '@phosphor-icons/react'
 
 import { Header } from '../../../components/Header'
-import { PencilSimple } from '@phosphor-icons/react'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { ModalSelectedCity } from '../../../components/Modal'
+import { Loading } from '../../../components/Loading'
 
-const createDriverFormSchema = z.object({
-    neighborhood: z.string().min(5),
-    car: z.string().min(5),
-    plate: z.string().min(5)
-  });
+import { useNavigate } from 'react-router-dom'
+import { useUberona } from '../../../../hooks/useUberona'
 
 export function Driver() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm({
-        resolver: zodResolver(createDriverFormSchema),
-      })
-    const [openModal, setOpenModal] = useState(false)
-    const [selectedCity, setSelectedCity] = useState("Luziânia")
+  const navigate = useNavigate()
+  const { isExistsCarRegistered } = useUberona()
+  const [isExistsCarRegisteredResponse, setIsExistsCarRegisteredResponse] = useState({})
 
-    function updateCity(newCity) {
-        setSelectedCity(newCity)
-        setOpenModal(false)
+  async function getIsExistsCarRegistered() {
+    try {
+      const response = await isExistsCarRegistered()
+
+      setIsExistsCarRegisteredResponse(response)
+    } catch (error) {
+      console.log(error)
     }
-    
-    async function handleCreateDriver(driver) {
-        try {
-          
-        } catch (error) {
-          console.log(error)
-        }
-      }
+  }
 
+  useEffect(() => {
+    getIsExistsCarRegistered()
+  }, [])
+
+  useEffect(() => {
+    if (isExistsCarRegisteredResponse.isExistsCarRegistered === false) {
+      navigate("/driver/registerNewDriver");
+    }
+  }, [isExistsCarRegisteredResponse, navigate]);
+
+  if (!isExistsCarRegisteredResponse.isExistsCarRegistered) {
     return (
-        <>
-            <Header title="Motorista" />
-            <ModalSelectedCity
-                optionSelected={selectedCity}
-                open={openModal}
-                handleClose={() => setOpenModal(false)}
-                updateCity={updateCity}
-            />
+      <>
+        <Header title="Motorista" />
+        <Loading message="Carregando..." />
+      </>
+    );
+  }
 
-            <div className='driver-container'>
-                <div className="city-selected">
-                    <span>A cidade selecionada foi</span>
-                    <h1>{selectedCity}</h1>
-                    <button onClick={() => setOpenModal(true)}>
-                        <PencilSimple size={16} color="#C4C4CC" />
-                    </button>
-                </div>
-
-                <form
-                    onSubmit={handleSubmit(handleCreateDriver)}
-                    className="form-register-driver-container"
-                >
-                    <span>Bairro</span>
-                    <input
-                        type="text"
-                        {...register('neighborhood')}
-                        // className={isErrorInput('')}
-                    />
-
-                    <span>Modelo do carro</span>
-                    <input
-                        type="text"
-                        {...register('car')}
-                        // className={isErrorInput('')}
-                    />
-
-                    <span>Placa</span>
-                    <input
-                        type="text"
-                        {...register('plate')}
-                        // className={isErrorInput('')}
-                    />
-                </form>
+  return (
+    <>
+      <Header title="Motorista" />
+      <div className='driver-list-cars-container'>
+          <div className='driver-list-cars-card'>
+            <div>
+              <h1>{isExistsCarRegisteredResponse?.car.car}</h1>
+              <span>{isExistsCarRegisteredResponse?.car.plate}</span>
+              <br />
+              <span>{isExistsCarRegisteredResponse?.car.quantityVacancies} vagas</span>
             </div>
-        </>
-    )
+
+            <div className='driver-list-card-buttons-container'>
+              <button onClick={() => navigate("")}>
+                <PencilSimple size={24} color='#C4C4CC' />
+              </button>
+              <button>
+                <Trash size={24} color='#C4C4CC' />
+              </button>
+            </div>
+          </div>
+      </div>
+    </>
+  )
 }

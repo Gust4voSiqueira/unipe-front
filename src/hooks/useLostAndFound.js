@@ -35,7 +35,6 @@ export const useLostAndFound = () => {
 
   async function deleteItem(itemId) {
     try {
-      console.log(itemId)
       await api.delete(`/lostAndFound/removeItem/${itemId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
