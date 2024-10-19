@@ -22,7 +22,7 @@ export const useUser = () => {
 
       return response.data
     } catch (error) {
-      throw new error
+      throw new error()
     }
   }
 
@@ -37,7 +37,7 @@ export const useUser = () => {
 
       return response
     } catch (error) {
-      throw new error
+      throw new error()
     }
   }
 
@@ -55,7 +55,7 @@ export const useUser = () => {
 
       return data
     } catch (error) {
-      throw new error
+      throw new error()
     }
   }
 

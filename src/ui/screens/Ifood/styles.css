@@ -1,103 +1,13 @@
-*{
-    font-family: "Poppins", sans-serif;
-}
-.contain-2{
-    display: flex;
-}
-.contain-btn{
-    width: 40px;
-    height: 40px;
-    padding: 3px;
-    margin-top: 10px;
-    border-radius:6px;
-    background-color: black;
-    color: #fff;
-}
-.contain-title{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color:  #d5d3d3 ;
-    padding: 20px;
-}
-.center{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.div-p{
-    width: 60%;
-    height: 85px;
-    background-color: #212223;
-    color: #969595;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    font-size: 15px;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.div-p a {
-    text-decoration: none;
-    color: #0a7421;
-}
-.div-contain{
+.ifood-container{
     padding: 30px;
 }
 
-.div-functions{
+.ifood-list-cards-container {
     width: 100%;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
     justify-items: center;
 }
-
-  @media (max-width: 1052px) {
-    .div-functions{
-
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 14px;
-    
-      }
-      .div-p{
-        width: 80%;
-      }
-
-  }
-
-  @media (max-width: 864px) {
-    .div-functions{
-
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 14px;
-        
-    }
-    .div-p{
-        width: 90%;
-      }
-
-    
-      
-  }
-
-
-  @media (max-width: 598px) {
-    .div-functions{
-
-        grid-template-columns: repeat(1, 1fr); 
-        gap: 14px;
-    
-      }
-      .div-p{
-        width: 100%;
-      }
-
-
-  }

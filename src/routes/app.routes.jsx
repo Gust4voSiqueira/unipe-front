@@ -5,7 +5,7 @@ import { LostAndFound } from '../ui/screens/LostAndFound'
 import { Uberona } from '../ui/screens/Uberona'
 import { Passenger } from '../ui/screens/Uberona/Passenger'
 import { DriverDetails } from '../ui/screens/Uberona/DriverDetails'
-import { Ifood } from "../ui/screens/Ifood";
+import { Ifood } from '../ui/screens/Ifood'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Driver } from '../ui/screens/Uberona/Driver'
@@ -20,7 +20,10 @@ export function AppRoutes() {
         <Route exact path="/room" element={<RoomMap />} />
         <Route exact path="/uberona" element={<Uberona />} />
         <Route exact path="/passenger" element={<Passenger />} />
-        <Route path="/passenger/details/:idDriver" element={<DriverDetails />} />
+        <Route
+          path="/passenger/details/:idDriver"
+          element={<DriverDetails />}
+        />
         <Route exact path="/driver" element={<Driver />} />
         <Route path="/driver/registerNewDriver" element={<FormNewDriver />} />
         <Route exact path="/lostAndFound" element={<LostAndFound />} />

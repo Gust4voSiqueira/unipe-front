@@ -1,47 +1,25 @@
-import { CaretLeft } from '@phosphor-icons/react'
-
 import './style.css'
 
-export function HeaderIfood({caso,title, status}) {
-        switch (caso) {
-          case 1:
-            return (
-                <>  
-                     <div className='center'>
-                        <div className='div-p'><p className='p-new'>Clique aquí para <a href=''>començar a vender</a></p></div>
-                    </div>
-                </>
-              )
-          case 2:
-            if (status) {
-                return (
-                    <> 
-                        <div className='center'>      
-                            <div className='div-p ifood-center '>
-                                <p className='ifood-title'>{title}</p>   
-                                <p className='p-new ifood-p-new'>Vocé esta <a href=''>online</a></p>
-                                <button className='ifood-btn-finCompras ifood-btn1'>
-                                    finalizar vendas                            
-                                </button>
-                            </div>
-                        </div>
-                    </>
-                  );
-            }
-            return (
-                <> 
-                    <div className='center'>      
-                        <div className='div-p ifood-center '>
-                            <p className='ifood-title'>{title}</p>   
-                            <p className='p-new ifood-p-new'>Vocé esta <a className='ifood-offline' href=''>offline</a></p>
-                            <button className='ifood-btn-finCompras ifood-btn2'>
-                                iniciar vendas                            
-                            </button>
-                        </div>
-                    </div>
-                </>
-              );
- 
-        }
- 
+function HandleButtons(isOnline) {
+    const isOnlineButtonClassName = isOnline ? 'header-ifood-button-offline' : 'header-ifood-button-online'
+    const isOnlineButtonText = isOnline ? 'Finalizar vendas' : 'Iniciar vendas'
+
+    return (
+        <button className={`header-ifood-button ${isOnlineButtonClassName}`}>
+            {isOnlineButtonText}                       
+        </button>
+    )
+}
+
+export function HeaderIfood({ title, isOnline }) {
+    const isOnlineMessageText = isOnline ? 'online' : 'offline'
+    const isOnlineMessageClassName = isOnline ? 'is-online' : 'is-offline'
+
+        return (
+                <div className='header-ifood-container'>      
+                    <h3 className='header-ifood-title'>{title}</h3>
+                    <span className='message-isonline'>Vocé está <span className={isOnlineMessageClassName}>{isOnlineMessageText}</span></span>
+                    {HandleButtons(isOnline)}
+                </div>
+        )
 }

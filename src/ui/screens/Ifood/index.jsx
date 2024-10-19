@@ -1,59 +1,23 @@
-import { CaretLeft } from '@phosphor-icons/react'
-import './styles.css';
-import { HeaderIfood } from '../../components/headerIfood';
-import { CardIfood } from '../../components/CardIfood';
+import './styles.css'
+import { Header } from '../../components/Header'
+import { HeaderIfood } from '../../components/HeaderIfood'
+import { CardIfood } from '../../components/CardIfood'
 
 export function Ifood() {
   return (
     <>
-    <div className='contain-2'>
-          <button className='contain-btn'>
-            <CaretLeft size={32} />
-          </button>
-        <p className='contain-title'>Ifood unidesc</p>
-      </div>
-      <div className='div-contain'>
+      <Header title="IFood Unidesc" />
+      <div className="ifood-container">
+        <HeaderIfood title="Brigadeiro" isOnline={false} />
 
-      <HeaderIfood
-        caso={2}
-        title="Brigadeiro"
-        status={false}
-      />
-
-      <div className='div-functions'>
-      <CardIfood 
-           title="UBERONA"
-           dais="Seg, Qui, Sex"
-           status={false}
-
-        />
-        <CardIfood 
-           title="UBERONA"
-            dais="Seg, Qui, Sex"
-            status={false}
-           
-        />
-        <CardIfood 
-           title="UBERONA"
-            dais="Seg, Qui, Sex"
-            status={true}
-        />
-        <CardIfood 
-           title="UBERONA"
-            dais="Seg, Qui, Sex"
-            status={true}
-        />
-        <CardIfood 
-           title="UBERONA"
-            dais="Seg, Qui, Sex"
-            status={true}
-        
-        />
-        
-      </div>
+        <div className="ifood-list-cards-container">
+          <CardIfood title="UBERONA" dais="Seg, Qui, Sex" status={false} />
+          <CardIfood title="UBERONA" dais="Seg, Qui, Sex" status={false} />
+          <CardIfood title="UBERONA" dais="Seg, Qui, Sex" status={true} />
+          <CardIfood title="UBERONA" dais="Seg, Qui, Sex" status={true} />
+          <CardIfood title="UBERONA" dais="Seg, Qui, Sex" status={true} />
+        </div>
       </div>
     </>
-    
-  );
+  )
 }
-
