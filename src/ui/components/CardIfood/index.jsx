@@ -3,21 +3,15 @@ import { WhatsappLogo } from '@phosphor-icons/react'
 import './style.css'
 
 export function CardIfood({ title, dais, status }) {
-  let claStatus
-  let textStatus
-  if (status) {
-    claStatus = 'ifood-status-prin ifood-status1'
-    textStatus = 'online'
-  } else {
-    claStatus = 'ifood-status-prin ifood-status2'
-    textStatus = 'offline'
-  }
+  const claStatus = status ? 'ifood-status-prin ifood-status1':'ifood-status-prin ifood-status2';
+  const textStatus = status ? 'online':'offline';
+
   return (
-    <div className="card-ifood-function-items">
+    <div className="card-ifood-container">
       <div className="container-text">
-        <p className="items-text">{title}</p>
-        <p className="items-dais">Dias disp: {dais}</p>
-        <div className="items-dais items-status">
+        <p className="card-ifood-title">{title}</p>
+        <p className="card-ifood-dais">Dias disp: {dais}</p>
+        <div className="card-ifood-status">
           <p>{textStatus}</p>
           <div className={claStatus}></div>
         </div>

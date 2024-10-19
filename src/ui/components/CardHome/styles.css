@@ -22,7 +22,7 @@
     height: 60px;
     border-radius: 100%;
   }
-  .function-items .items-text{
+  .function-items  .items-text{
     color: #d5d3d3 ;
     font-size: 15px;
     margin-left: 12px;
@@ -40,3 +40,18 @@
     padding: 10px;
     cursor: pointer;
   }
+
+  .button-icon{
+    background-color: #151515 ;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+}
+.card-ifood-title{
+    color: #d5d3d3 ;
+    font-size: 15px;
+    margin-left: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
