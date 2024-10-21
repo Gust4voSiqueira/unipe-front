@@ -1,8 +1,6 @@
 import './styles.css'
 import { useState } from 'react'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Modal from '@mui/material/Modal'
+import { ModalComponent } from '../Modal'
 
 export function ModalSelectedCity({
   optionSelected,
@@ -18,32 +16,7 @@ export function ModalSelectedCity({
 
   return (
     <>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <div className="modal-container">
-          <Box
-            bgcolor="#29292E"
-            width="70%"
-            height="280px"
-            margin="auto"
-            borderRadius={6}
-            padding={2}
-          >
-            <Typography
-              id="modal-modal-title"
-              variant="h6"
-              component="h2"
-              color="#8D8D99"
-              fontFamily="Roboto"
-              fontSize={16}
-              textAlign="center"
-            >
-              Selecione sua cidade
-            </Typography>
+      <ModalComponent title="Seleciona sua cidade" isOpen={open} handleCloseModal={handleClose} heightModal="280px">
             <div className="buttons-select-city-container">
               <button
                 className={`select-city-button ${
@@ -85,9 +58,7 @@ export function ModalSelectedCity({
                 <span>Selecionar</span>
               </button>
             </div>
-          </Box>
-        </div>
-      </Modal>
+        </ModalComponent>
     </>
   )
 }

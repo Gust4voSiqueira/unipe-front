@@ -89,7 +89,7 @@ export function Home() {
           title="IFOOD UNIDESC"
           image={IfoodIcon}
           externalLink={false}
-          link=""
+          link="/ifood"
         />
         <CardHome
           title="MAPA DE SALAS"

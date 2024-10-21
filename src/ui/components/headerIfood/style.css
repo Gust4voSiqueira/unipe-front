@@ -1,0 +1,48 @@
+.header-ifood-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #29292E;
+    border-radius: 6px;
+    padding: 12px 0;
+    margin-bottom: 12px;
+}
+
+.header-ifood-container h3.header-ifood-title {
+    font-size: 18px;
+    color: #C4C4CC;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.header-ifood-container .message-isonline {
+    font-size: 14px;
+    color: #C4C4CC;
+    font-family: Roboto;
+    margin: 6px 0;
+}
+
+.header-ifood-container .message-isonline .is-online {
+    color: #00875F;
+}
+
+.header-ifood-container .message-isonline .is-offline {
+    color: #FD4755;
+}
+
+.header-ifood-button {
+    padding: 6px 0;
+    width: 140px;
+    border-radius: 6px;
+    color: #FFF;
+    font-size: 14px;
+}
+
+.header-ifood-button-online {
+    background-color: #00875F;
+}
+
+.header-ifood-button-offline {
+    background-color: #FD4755;
+}

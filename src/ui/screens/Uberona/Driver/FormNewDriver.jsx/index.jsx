@@ -59,7 +59,7 @@ export function FormNewDriver() {
 
     try {
       await createNewDriver(newDriver)
-      navigate("/uberona")
+      navigate('/uberona')
     } catch (error) {
       console.log(error)
     }

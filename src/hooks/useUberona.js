@@ -65,6 +65,6 @@ export const useUberona = () => {
     getDrivers,
     getDriverDetails,
     createNewDriver,
-    isExistsCarRegistered
+    isExistsCarRegistered,
   }
 }
