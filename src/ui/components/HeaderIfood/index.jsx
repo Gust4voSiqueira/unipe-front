@@ -1,4 +1,4 @@
-import './style.css'
+import './styles.css'
 
 function HandleButtons({ isOnline, updateStatus }) {
   const isOnlineButtonClassName = isOnline
