@@ -5,7 +5,7 @@ import { Loading } from '../../components/Loading'
 import { useEffect, useState } from 'react'
 import { useIfood } from '../../../hooks/useIfood'
 import { ModalIfood } from '../../components/ModalIfood'
-import { HeaderIfood } from '../../components/HeaderIfood'
+import { HeaderIfood } from '../../components/headerIfood'
 
 function HandleCardsFood({ foods, deleteProduct }) {
   if (foods.length > 0) {
