@@ -1,11 +1,11 @@
 import './styles.css'
 import { Header } from '../../components/Header'
-import { HeaderIfood } from '../../components/HeaderIfood'
 import { CardIfood } from '../../components/CardIfood'
 import { Loading } from '../../components/Loading'
 import { useEffect, useState } from 'react'
 import { useIfood } from '../../../hooks/useIfood'
 import { ModalIfood } from '../../components/ModalIfood'
+import { HeaderIfood } from '../../components/HeaderIfood'
 
 function HandleCardsFood({ foods, deleteProduct }) {
   if (foods.length > 0) {
