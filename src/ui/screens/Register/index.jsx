@@ -8,7 +8,7 @@ import Logo from '../../../assets/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ButtonComponent } from '../../components/Button'
+import { ButtonComponent } from '../../components'
 import { useUser } from '../../../hooks/useUser'
 import { Alert } from '@mui/material'
 

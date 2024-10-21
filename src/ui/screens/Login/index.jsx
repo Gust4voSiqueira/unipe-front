@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import Logo from '../../../assets/logo.png'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ButtonComponent } from '../../components/Button'
+import { ButtonComponent } from '../../components'
 import { useUser } from '../../../hooks/useUser'
 import { isErrorInput } from '../../../utils/isErrorInput'
 

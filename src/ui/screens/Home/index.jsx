@@ -6,8 +6,7 @@ import { useContext, useEffect, useState } from 'react'
 
 import { useUser } from '../../../hooks/useUser'
 import { TokenContext } from '../../../contexts/TokenContext'
-import { Carousel } from '../../components/Carousel'
-import { CardHome } from '../../components/CardHome'
+import { Carousel, CardHome } from '../../components'
 
 import UberonaIcon from '../../../assets/uberona-icon.svg'
 import AvaNeadIcon from '../../../assets/nead-icon.svg'

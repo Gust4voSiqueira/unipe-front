@@ -1,11 +1,7 @@
 import './styles.css'
-import { Header } from '../../components/Header'
-import { CardIfood } from '../../components/CardIfood'
-import { Loading } from '../../components/Loading'
+import { Header, CardIfood, Loading, ModalIfood, HeaderIfood } from '../../components'
 import { useEffect, useState } from 'react'
 import { useIfood } from '../../../hooks/useIfood'
-import { ModalIfood } from '../../components/ModalIfood'
-import { HeaderIfood } from '../../components/headerIfood'
 
 function HandleCardsFood({ foods, deleteProduct }) {
   if (foods.length > 0) {
@@ -29,12 +25,11 @@ function HandleCardsFood({ foods, deleteProduct }) {
 }
 
 export function Ifood() {
-  const { insertFood, deleteProduct } = useIfood()
   const [foods, setFoods] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [openModal, setOpenModal] = useState(false)
   const [foodInCurrentUser, setFoodInCurrentUser] = useState(false)
-  const { listFoods, updateStatus, getIsProductInCurrentUser } = useIfood()
+  const { insertFood, deleteProduct, listFoods, updateStatus, getIsProductInCurrentUser } = useIfood()
 
   async function fetchFoods() {
     try {

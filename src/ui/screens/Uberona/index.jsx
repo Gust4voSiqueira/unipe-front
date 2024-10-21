@@ -1,6 +1,6 @@
 import './styles.css'
 import { useNavigate } from 'react-router-dom'
-import { Header } from '../../components/Header'
+import { Header } from '../../components'
 
 import WarningIcon from '../../../assets/uberona-warning-icon.svg'
 

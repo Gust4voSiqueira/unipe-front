@@ -1,15 +1,6 @@
-import { Home } from '../ui/screens/Home'
-import { Calendar } from '../ui/screens/Calendar'
-import { RoomMap } from '../ui/screens/RoomMap'
-import { LostAndFound } from '../ui/screens/LostAndFound'
-import { Uberona } from '../ui/screens/Uberona'
-import { Passenger } from '../ui/screens/Uberona/Passenger'
-import { DriverDetails } from '../ui/screens/Uberona/DriverDetails'
-import { Ifood } from '../ui/screens/Ifood'
-import { Driver } from '../ui/screens/Uberona/Driver'
+import { Home, Calendar, RoomMap, LostAndFound, Uberona, Passenger, DriverDetails, Ifood, Driver, FormNewDriver } from '../ui/screens'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { FormNewDriver } from '../ui/screens/Uberona/Driver/FormNewDriver.jsx'
 
 export function AppRoutes() {
   return (

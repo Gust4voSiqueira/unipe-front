@@ -2,8 +2,7 @@ import './styles.css'
 import { useState, useEffect } from 'react'
 import { Trash, PencilSimple } from '@phosphor-icons/react'
 
-import { Header } from '../../../components/Header'
-import { Loading } from '../../../components/Loading'
+import { Header, Loading } from '../../../components'
 
 import { useNavigate } from 'react-router-dom'
 import { useUberona } from '../../../../hooks/useUberona'

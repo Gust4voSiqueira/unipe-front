@@ -1,5 +1,5 @@
 import './styles.css'
-import { Header } from '../../components/Header'
+import { Header } from '../../components'
 
 import AcademicCalendar from '../../../assets/academicCalendar.jpeg'
 import ExamCalendar from '../../../assets/examCalendar.png'

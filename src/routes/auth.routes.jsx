@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Login } from '../ui/screens/Login'
-import { Register } from '../ui/screens/Register'
+import { Login, Register } from '../ui/screens'
 
 export function AuthRoutes() {
   return (

@@ -1,10 +1,7 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
-import { Header } from '../../components/Header'
-import { Loading } from '../../components/Loading'
-import { CardFound } from '../../components/CardFound'
+import { Header, Loading, CardFound, ModalFoundAndLost } from '../../components'
 import { useLostAndFound } from '../../../hooks/useLostAndFound'
-import { ModalFoundAndLost } from '../../components/ModalFoundAndLost'
 
 function HandleCardsLostAndFound({ items, removeItem }) {
   return items.map((item, index) => (

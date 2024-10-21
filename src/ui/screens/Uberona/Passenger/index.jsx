@@ -1,13 +1,10 @@
 import './styles.css'
 import { useEffect, useState } from 'react'
 
-import { Header } from '../../../components/Header'
-import { CardUberona } from '../../../components/CardUberona'
+import { Header, CardUberona, Loading, ModalSelectedCity } from '../../../components'
 
 import { PencilSimple } from '@phosphor-icons/react'
 import { useUberona } from '../../../../hooks/useUberona'
-import { Loading } from '../../../components/Loading'
-import { ModalSelectedCity } from '../../../components/ModalSelectedCity'
 
 function HandleCards(drivers) {
   if (drivers.length > 0) {
