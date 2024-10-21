@@ -9,14 +9,14 @@ const api = axios.create({
 })
 
 api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
+  response => response,
+  async error => {
     const { removeToken } = useContext(TokenContext)
 
     if (error.response.status === 403) {
-      removeToken()
+        removeToken()
     }
-  },
+  }
 )
 
 export { api }

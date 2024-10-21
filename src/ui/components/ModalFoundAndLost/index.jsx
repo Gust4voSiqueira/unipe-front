@@ -1,11 +1,7 @@
 import './styles.css'
 
 import { z } from 'zod'
-import Box from '@mui/material/Box'
-import Modal from '@mui/material/Modal'
-import { X } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
-import Typography from '@mui/material/Typography'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ModalComponent } from '../Modal'
 
