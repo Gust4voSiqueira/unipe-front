@@ -1,9 +1,7 @@
 .card-ifood-container{
-    width: 100%;
-    height: 100px;
-    background-color: #212223  ;
-    border-radius: 15px;
-    padding: 10px;
+    background-color: #29292E;
+    border-radius: 6px;
+    padding: 14px 12px;
     
     display: flex;
     justify-content: space-between;
@@ -14,50 +12,63 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .card-ifood-container .card-ifood-dais{
-    margin-left: 12px;
-    display: block;
-   color: #969595;
-
+  .card-ifood-container .card-ifood-days{
+    color: #C4C4CC;
+    font-size: 12px;
   }
-  .card-ifood-container .card-ifood-title{
-    display: block;
-    color: #f8f4f4 ;
-    font-size: 15px;
-    margin-left: 12px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+  .card-ifood-container .card-ifood-title-product {
+    color: #fff ;
+    font-size: 16px;
+    font-family: "Inter";
+    font-weight: bold;
   }
   .card-ifood-status{
-    margin-left: 12px;
-    color: #969595;
-    display: flex ;
-   
+    display: flex;
+    align-items: center;
+  }
+
+  .card-ifood-status p{
+    color: #C4C4CC;
+    font-size: 12px;
   }
  
   .ifood-status-prin{
-    width: 10px;
-    height: 10px;
-    margin: 9px 0 0 7px ;
+    width: 8px;
+    height: 8px;
+    margin-left: 4px;
     border-radius: 100%;
   }
   .ifood-status1{
-    background-color: #0a7421;
+    background-color: #00875F;
   }
   .ifood-status2{
-    background-color: #f50f22;
+    background-color: #FD4755;
   }
   .card-ifood-container .icon{
     font-size: 100px;
     color: #d5d3d3 ;
   }
   .card-ifood-container .button-icon{
-    background-color: #f50f22 ;
+    background-color: #FD4755 ;
     border-radius: 6px;
     padding: 10px;
     cursor: pointer;
   }
   .card-ifood-container .button-2{
     background-color: #0a7421;
+  }
+
+  .card-ifood-button-icon {
+    background-color: #FD4755 ;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-whatsapp {
+    background-color: #00875F;
   }
