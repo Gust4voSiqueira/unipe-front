@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useUser } from '../../../hooks/useUser'
 import { TokenContext } from '../../../contexts/TokenContext'
 import { Carousel, CardHome } from '../../components'
+import { Loading } from '../Loading'
 
 import UberonaIcon from '../../../assets/uberona-icon.svg'
 import AvaNeadIcon from '../../../assets/nead-icon.svg'
@@ -41,7 +42,7 @@ export function Home() {
     getMyUser()
   }, [])
 
-  if (!user) return
+  if (!user.name) return <Loading />
 
   return (
     <div className="home-comtainer">

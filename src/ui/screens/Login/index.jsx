@@ -12,7 +12,6 @@ import { useUser } from '../../../hooks/useUser'
 import { isErrorInput } from '../../../utils/isErrorInput'
 
 function HandleError({ isError }) {
-  console.log(isError)
   return (
     isError && (
       <div className="error-container">
@@ -66,6 +65,7 @@ export function Login() {
         <span>E-mail</span>
         <input
           type="text"
+          autoComplete='off'
           {...register('email')}
           className={isErrorInput(errors, 'email')}
         />

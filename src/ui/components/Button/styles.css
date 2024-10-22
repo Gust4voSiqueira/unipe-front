@@ -15,3 +15,9 @@ button.button-component p {
     font-family: Roboto;
     font-size: 16px;
 }
+
+button .button-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
