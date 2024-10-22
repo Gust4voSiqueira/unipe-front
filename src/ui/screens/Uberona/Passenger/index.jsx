@@ -75,7 +75,9 @@ export function Passenger() {
 
         <div className="cards-container">
           {loading ? (
-            <Loading message="Buscando motoristas." />
+            <div className='uberona-loading-container'>
+              <Loading message="Buscando motoristas." />
+            </div>
           ) : (
             HandleCards(drivers)
           )}
