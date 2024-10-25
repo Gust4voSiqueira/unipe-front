@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { TokenContext } from '../contexts/TokenContext'
 
 const api = axios.create({

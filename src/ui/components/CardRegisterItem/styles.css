@@ -1,0 +1,19 @@
+.card-register-item-container{
+    background-color: #212223;
+    color: #969595;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.card-register-item-container button {
+    text-decoration: none;
+    font-weight: bold;
+    color: #00875F;
+    background-color: transparent;
+    font-size: 14px;
+}

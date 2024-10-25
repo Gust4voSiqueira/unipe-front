@@ -9,6 +9,7 @@ import { Driver } from '../ui/screens/Uberona/Driver'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { FormNewDriver } from '../ui/screens/Uberona/Driver/FormNewDriver.jsx'
+import { Pets } from '../ui/screens/Pets'
 
 export function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ export function AppRoutes() {
         <Route exact path="/driver" element={<Driver />} />
         <Route path="/driver/registerNewDriver" element={<FormNewDriver />} />
         <Route exact path="/lostAndFound" element={<LostAndFound />} />
+        <Route exact path="/pets" element={<Pets />} />
       </Routes>
     </BrowserRouter>
   )

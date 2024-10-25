@@ -2,7 +2,7 @@ import { WhatsappLogo, Trash } from '@phosphor-icons/react'
 
 import './style.css'
 
-export function CardFound({
+export function CardItemAndPets({
   itemId,
   title,
   direction,
@@ -12,7 +12,7 @@ export function CardFound({
 }) {
   if (!isAddedByCurrentUser) {
     return (
-      <div className="card-found-function-items">
+      <div className="card-items-and-pets-container">
         <div className="container-text">
           <p className="items-text">{title}</p>
           <p className="items-direction">{direction}</p>
@@ -32,7 +32,7 @@ export function CardFound({
   }
 
   return (
-    <div className="card-found-function-items">
+    <div className="card-items-and-pets-container">
       <div className="container-text">
         <p className="items-text">{title}</p>
         <p className="items-direction">{direction}</p>
