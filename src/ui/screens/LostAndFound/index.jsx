@@ -1,6 +1,12 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
-import { CardItemAndPets, CardRegisterItem, Header, Loading, ModalFoundAndLost } from '../../components'
+import {
+  CardItemAndPets,
+  CardRegisterItem,
+  Header,
+  Loading,
+  ModalFoundAndLost,
+} from '../../components'
 import { useLostAndFound } from '../../../hooks/useLostAndFound'
 
 function HandleCardsLostAndFound({ items, removeItem }) {
@@ -84,7 +90,10 @@ export function LostAndFound() {
       )}
 
       <div className="lost-and-found-div-contain">
-        <CardRegisterItem text="cadastrar um novo item" handleModal={handleModal} />
+        <CardRegisterItem
+          text="cadastrar um novo item"
+          handleModal={handleModal}
+        />
         {items.length > 0 ? (
           <HandleCardsLostAndFound
             items={items}

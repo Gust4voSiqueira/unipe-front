@@ -9,17 +9,14 @@ export const usePets = () => {
 
   async function listPets() {
     try {
-      const { data } = await api.get(
-        '/pet',
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          },
+      const { data } = await api.get('/pet', {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      )
+      })
       return data
     } catch (error) {
-      throw new error
+      throw new error()
     }
   }
 
@@ -27,18 +24,18 @@ export const usePets = () => {
     try {
       const response = await api.delete(`pet/delete/${petId}`, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
       })
 
       console.log(response)
     } catch (error) {
-      throw new error
+      throw new error()
     }
   }
 
   return {
     listPets,
-    deletePet
+    deletePet,
   }
 }

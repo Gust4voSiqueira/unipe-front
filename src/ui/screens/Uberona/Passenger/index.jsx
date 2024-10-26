@@ -1,7 +1,12 @@
 import './styles.css'
 import { useEffect, useState } from 'react'
 
-import { Header, CardUberona, Loading, ModalSelectedCity } from '../../../components'
+import {
+  Header,
+  CardUberona,
+  Loading,
+  ModalSelectedCity,
+} from '../../../components'
 
 import { PencilSimple } from '@phosphor-icons/react'
 import { useUberona } from '../../../../hooks/useUberona'
@@ -75,7 +80,7 @@ export function Passenger() {
 
         <div className="cards-container">
           {loading ? (
-            <div className='uberona-loading-container'>
+            <div className="uberona-loading-container">
               <Loading message="Buscando motoristas." />
             </div>
           ) : (
