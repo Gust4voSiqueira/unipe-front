@@ -5,6 +5,7 @@ import { Header } from '../../components/Header'
 import { usePets } from '../../../hooks/usePets'
 import { Loading } from '../../components/Loading'
 import { CardItemAndPets, CardRegisterItem } from '../../components'
+import { ModalPets } from '../../components/ModalPets'
 
 function HandleCardsPets(pets, deletePet) {
   if (pets.length === 0)
@@ -26,7 +27,9 @@ function HandleCardsPets(pets, deletePet) {
 export function Pets() {
   const [pets, setPets] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const { listPets, deletePet } = usePets()
+  const [isOpenModal, setIsOpenModal] = useState(false)
+
+  const { listPets, deletePet, createPet } = usePets()
 
   async function getPets() {
     try {
@@ -50,12 +53,24 @@ export function Pets() {
     getPets()
   }, [])
 
+  async function registerPet(pet) {
+    try {
+      setIsOpenModal(false)
+      setIsLoading(true)
+      await createPet(pet)
+      getPets()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <Header title="Doação de Pets" />
+      <ModalPets isOpen={isOpenModal} handleCloseModal={() => setIsOpenModal(false)} handleCreatePet={registerPet}  />
 
       <div className="pets-container">
-        <CardRegisterItem text="cadastrar um novo Pet" />
+        <CardRegisterItem text="cadastrar um novo Pet" handleModal={() => setIsOpenModal(true)} />
 
         {isLoading ? <Loading /> : HandleCardsPets(pets, removePet)}
       </div>
