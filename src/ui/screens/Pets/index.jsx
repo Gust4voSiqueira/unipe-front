@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react'
 import { Header } from '../../components/Header'
 import { usePets } from '../../../hooks/usePets'
 import { Loading } from '../../components/Loading'
-import { CardItemAndPets } from '../../components/CardItemAndPets'
-import { CardRegisterItem } from '../../components/CardRegisterItem'
+import { CardItemAndPets } from '../../components'
 
 function HandleCardsPets(pets, deletePet) {
     if(pets.length === 0) return <p className='pets-not-found-message'>Nenhum Pet encontrado.</p>

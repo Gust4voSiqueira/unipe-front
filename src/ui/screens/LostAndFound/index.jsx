@@ -1,6 +1,6 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
-import { Header, Loading, ModalFoundAndLost } from '../../components'
+import { CardItemAndPets, CardRegisterItem, Header, Loading, ModalFoundAndLost } from '../../components'
 import { useLostAndFound } from '../../../hooks/useLostAndFound'
 
 function HandleCardsLostAndFound({ items, removeItem }) {
