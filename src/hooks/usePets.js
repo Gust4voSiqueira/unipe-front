@@ -22,13 +22,23 @@ export const usePets = () => {
 
   async function deletePet(petId) {
     try {
-      const response = await api.delete(`pet/delete/${petId}`, {
+      await api.delete(`pet/delete/${petId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
+    } catch (error) {
+      throw new error()
+    }
+  }
 
-      console.log(response)
+  async function createPet(pet) {
+    try {
+      await api.post('pet/insert', pet,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
     } catch (error) {
       throw new error()
     }
@@ -37,5 +47,6 @@ export const usePets = () => {
   return {
     listPets,
     deletePet,
+    createPet
   }
 }

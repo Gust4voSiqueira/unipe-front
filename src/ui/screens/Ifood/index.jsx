@@ -5,6 +5,7 @@ import {
   Loading,
   ModalIfood,
   HeaderIfood,
+  CardRegisterItem,
 } from '../../components'
 import { useEffect, useState } from 'react'
 import { useIfood } from '../../../hooks/useIfood'
@@ -117,17 +118,7 @@ export function Ifood() {
                 isOnline={foodInCurrentUser.isOnline}
                 updateStatus={onUpdateStatus}
               />
-            ) : (
-              // Trocar para componente após implementação do Pets
-              <div className="lost-and-found-center">
-                <p className="lost-and-found-p-new">
-                  Clique aqui para{' '}
-                  <button onClick={() => setOpenModal(true)}>
-                    começar a vender
-                  </button>
-                </p>
-              </div>
-            )}
+            ) : <CardRegisterItem text="começar a vender" handleModal={() => setOpenModal(true)} />}
 
             <div className="ifood-list-cards-container">
               <HandleCardsFood

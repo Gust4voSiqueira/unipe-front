@@ -1,5 +1,11 @@
 import './styles.css'
 
+import { Header } from '../../components'
+
 export function RoomMap() {
-  return <h1>Hello</h1>
+  return (
+    <>
+      <Header title="Mapa de salas" />
+    </>
+  )
 }
