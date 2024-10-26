@@ -7,12 +7,11 @@ import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import Logo from '../../../assets/logo.png'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ButtonComponent } from '../../components/Button'
+import { ButtonComponent } from '../../components'
 import { useUser } from '../../../hooks/useUser'
 import { isErrorInput } from '../../../utils/isErrorInput'
 
 function HandleError({ isError }) {
-  console.log(isError)
   return (
     isError && (
       <div className="error-container">
@@ -66,6 +65,7 @@ export function Login() {
         <span>E-mail</span>
         <input
           type="text"
+          autoComplete='off'
           {...register('email')}
           className={isErrorInput(errors, 'email')}
         />

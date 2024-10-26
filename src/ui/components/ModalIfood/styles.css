@@ -1,0 +1,71 @@
+.ifood-form-new-item {
+    display: flex;
+    flex-direction: column;
+  
+    margin: 14px 0;
+}
+
+.ifood-form-new-item span {
+    color: #8D8D99;
+    font-family: Roboto;
+    font-size: 14px;
+    margin: 5px 0 4px 2px; 
+}
+
+.ifood-form-new-item input {
+    height: 40px;
+    border-radius: 4px;
+    background-color: #171616;
+    color: #f4f4f4;
+    padding-left: 8px;
+    margin-bottom: 10px;
+    font-family: Roboto;
+}
+
+.ifood-form-new-item button {
+    height: 44px;
+    border-radius: 6px;
+    margin-top: 6px;
+    background-color: #00875F;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ifood-form-new-item button:disabled {
+    height: 48px;
+    border-radius: 6px;
+    background-color: #027150;
+}
+
+.ifood-form-new-item button span {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+.ifood-select-days-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #171616;
+    border-radius: 6px;
+}
+
+.ifood-select-days-container label {
+    width: 100%;
+    padding: 2px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ifood-select-days-container .ifood-select-days-label {
+    border-bottom: 2px solid #29292E;
+}
+
+.ifood-select-days-container div {
+    width: 140px;
+}

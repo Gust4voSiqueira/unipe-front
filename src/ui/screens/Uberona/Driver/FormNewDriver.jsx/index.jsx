@@ -3,10 +3,9 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Header } from '../../../../components/Header'
+import { Header, ModalSelectedCity } from '../../../../components'
 import { PencilSimple } from '@phosphor-icons/react'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ModalSelectedCity } from '../../../../components/ModalSelectedCity'
 import { FormControlLabel, Checkbox } from '@mui/material'
 import { useUberona } from '../../../../../hooks/useUberona'
 import { isErrorInput } from '../../../../../utils/isErrorInput'
@@ -59,7 +58,7 @@ export function FormNewDriver() {
 
     try {
       await createNewDriver(newDriver)
-      navigate("/uberona")
+      navigate('/uberona')
     } catch (error) {
       console.log(error)
     }

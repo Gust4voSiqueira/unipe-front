@@ -3,11 +3,9 @@ import { useState, useEffect, useContext } from 'react'
 import { WhatsappLogo } from '@phosphor-icons/react'
 
 import { useParams } from 'react-router-dom'
-import { Header } from '../../../components/Header'
+import { Header, CardDriverDetails, Loading } from '../../../components'
 import { useUberona } from '../../../../hooks/useUberona'
-import { CardDriverDetails } from '../../../components/CardDriverDetails'
 import { TokenContext } from '../../../../contexts/TokenContext'
-import { Loading } from '../../../components/Loading'
 
 function HandleCardsDetailsDriver(driver) {
   if (driver) {

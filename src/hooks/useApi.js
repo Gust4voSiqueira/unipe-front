@@ -12,6 +12,18 @@ const useApi = () => {
   })
 
   api.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+      if (
+        error.response &&
+        error.request.responseURL !==
+          'https://unipe-16862c35e34b.herokuapp.com/auth/login' &&
+        error.response.status === 403
+      ) {
+        removeToken()
+      }
+      return Promise.reject(error)
+    },
     response => response,
     async error => {
       if (error.response && error.request.responseURL !== "https://unipe-16862c35e34b.herokuapp.com/auth/login" && error.response.status === 403) {
