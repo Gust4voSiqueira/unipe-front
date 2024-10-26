@@ -113,7 +113,7 @@ export function Home() {
           title="DOAÇÃO DE PETS"
           image={PetsIcon}
           externalLink={false}
-          link=""
+          link="/pets"
         />
         <CardHome
           title="MENTORIAS"

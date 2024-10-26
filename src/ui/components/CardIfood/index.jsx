@@ -14,10 +14,7 @@ function HandleDays({ days }) {
 function HandleButtons({ isAddedByCurrentUser, removeItem, phone }) {
   if (isAddedByCurrentUser) {
     return (
-      <button
-        className="card-ifood-button-icon"
-        onClick={removeItem}
-      >
+      <button className="card-ifood-button-icon" onClick={removeItem}>
         <Trash size={24} color="#fff" />
       </button>
     )
@@ -44,7 +41,7 @@ export function CardIfood({
   status,
   isAddedByCurrentUser,
   phone,
-  deleteProduct
+  deleteProduct,
 }) {
   const claStatus = status
     ? 'ifood-status-prin ifood-status1'

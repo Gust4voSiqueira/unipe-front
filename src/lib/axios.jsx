@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { TokenContext } from '../contexts/TokenContext'
 
 const api = axios.create({
@@ -9,14 +8,14 @@ const api = axios.create({
 })
 
 api.interceptors.response.use(
-  response => response,
-  async error => {
+  (response) => response,
+  async (error) => {
     const { removeToken } = useContext(TokenContext)
 
     if (error.response.status === 403) {
-        removeToken()
+      removeToken()
     }
-  }
+  },
 )
 
 export { api }

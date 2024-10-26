@@ -73,18 +73,16 @@ export const useIfood = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-
     } catch (error) {
       throw new error()
     }
   }
-  
 
   return {
     listFoods,
     updateStatus,
     getIsProductInCurrentUser,
     insertFood,
-    deleteProduct
+    deleteProduct,
   }
 }

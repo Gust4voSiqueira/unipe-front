@@ -65,7 +65,7 @@ export function Login() {
         <span>E-mail</span>
         <input
           type="text"
-          autoComplete='off'
+          autoComplete="off"
           {...register('email')}
           className={isErrorInput(errors, 'email')}
         />

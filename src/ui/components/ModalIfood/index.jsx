@@ -9,7 +9,7 @@ import { useCallback, useState } from 'react'
 import { ModalComponent } from '../Modal'
 
 const createItemFormSchema = z.object({
-  food: z.string().min(3)
+  food: z.string().min(3),
 })
 
 export function ModalIfood({ isOpen, handleCloseModal, handleCreateProduct }) {
@@ -27,38 +27,42 @@ export function ModalIfood({ isOpen, handleCloseModal, handleCreateProduct }) {
   }, [])
 
   return (
-    <ModalComponent title="Crie o seu produto" handleCloseModal={handleCloseModal} isOpen={isOpen} heightModal="528px">
-          <form
-            className="ifood-form-new-item"
-            onSubmit={handleSubmit(() => handleCreateProduct(getValues('food'), selectedDays))}
-          >
-            <span>Produto</span>
-            <input type="text" {...register('food')} />
+    <ModalComponent
+      title="Crie o seu produto"
+      handleCloseModal={handleCloseModal}
+      isOpen={isOpen}
+      heightModal="528px"
+    >
+      <form
+        className="ifood-form-new-item"
+        onSubmit={handleSubmit(() =>
+          handleCreateProduct(getValues('food'), selectedDays),
+        )}
+      >
+        <span>Produto</span>
+        <input type="text" {...register('food')} />
 
-            <span>Dias Disponíveis</span>
-            <div className="ifood-select-days-container">
-              {DAYS_OF_WEEK.map((day) => (
-                <label key={day.value} className="ifood-select-days-label">
-                  <div />
-                  <FormControlLabel
-                    labelPlacement="start"
-                    label={day.label}
-                    control={<Checkbox color="success" />}
-                    checked={selectedDays.includes(day.value)}
-                    onChange={() =>
-                      handleDayChange(
-                        day.value,
-                        selectedDays.includes(day.value),
-                      )
-                    }
-                  />
-                </label>
-              ))}
-            </div>
-            <button type='submit'>
-              <span>Cadastrar produto</span>
-            </button>
-          </form>
-      </ModalComponent>
+        <span>Dias Disponíveis</span>
+        <div className="ifood-select-days-container">
+          {DAYS_OF_WEEK.map((day) => (
+            <label key={day.value} className="ifood-select-days-label">
+              <div />
+              <FormControlLabel
+                labelPlacement="start"
+                label={day.label}
+                control={<Checkbox color="success" />}
+                checked={selectedDays.includes(day.value)}
+                onChange={() =>
+                  handleDayChange(day.value, selectedDays.includes(day.value))
+                }
+              />
+            </label>
+          ))}
+        </div>
+        <button type="submit">
+          <span>Cadastrar produto</span>
+        </button>
+      </form>
+    </ModalComponent>
   )
 }

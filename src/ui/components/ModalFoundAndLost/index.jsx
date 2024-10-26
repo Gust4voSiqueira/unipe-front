@@ -20,21 +20,26 @@ export function ModalFoundAndLost({
   })
 
   return (
-    <ModalComponent title="Cadastrar um novo item" isOpen={isOpen} handleCloseModal={handleCloseModal} heightModal="280px">
-          <form
-            className="lost-and-found-form-new-item"
-            onSubmit={handleSubmit(handleCreateItem)}
-          >
-            <span>Item encontrado</span>
-            <input type="text" {...register('item')} />
+    <ModalComponent
+      title="Cadastrar um novo item"
+      isOpen={isOpen}
+      handleCloseModal={handleCloseModal}
+      heightModal="280px"
+    >
+      <form
+        className="lost-and-found-form-new-item"
+        onSubmit={handleSubmit(handleCreateItem)}
+      >
+        <span>Item encontrado</span>
+        <input type="text" {...register('item')} />
 
-            <span>Local em que você o encontrou</span>
-            <input type="text" {...register('local')} />
+        <span>Local em que você o encontrou</span>
+        <input type="text" {...register('local')} />
 
-            <button>
-              <span>Cadastrar item</span>
-            </button>
-          </form>
+        <button>
+          <span>Cadastrar item</span>
+        </button>
+      </form>
     </ModalComponent>
   )
 }

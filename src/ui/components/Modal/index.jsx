@@ -5,9 +5,15 @@ import Modal from '@mui/material/Modal'
 import { X } from '@phosphor-icons/react'
 import Typography from '@mui/material/Typography'
 
-export function ModalComponent({ title, children, handleCloseModal, isOpen, heightModal }) {
-    return (
-        <Modal
+export function ModalComponent({
+  title,
+  children,
+  handleCloseModal,
+  isOpen,
+  heightModal,
+}) {
+  return (
+    <Modal
       open={isOpen}
       onClose={handleCloseModal}
       aria-labelledby="modal-modal-title"
@@ -42,5 +48,5 @@ export function ModalComponent({ title, children, handleCloseModal, isOpen, heig
         </Box>
       </div>
     </Modal>
-    )
+  )
 }

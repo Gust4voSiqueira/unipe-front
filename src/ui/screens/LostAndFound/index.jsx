@@ -1,11 +1,17 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
-import { Header, Loading, CardFound, ModalFoundAndLost } from '../../components'
+import {
+  CardItemAndPets,
+  CardRegisterItem,
+  Header,
+  Loading,
+  ModalFoundAndLost,
+} from '../../components'
 import { useLostAndFound } from '../../../hooks/useLostAndFound'
 
 function HandleCardsLostAndFound({ items, removeItem }) {
   return items.map((item, index) => (
-    <CardFound
+    <CardItemAndPets
       key={index}
       itemId={item.id}
       title={item.item}
@@ -84,12 +90,10 @@ export function LostAndFound() {
       )}
 
       <div className="lost-and-found-div-contain">
-        <div className="lost-and-found-center">
-          <p className="lost-and-found-p-new">
-            Clique aqui para{' '}
-            <button onClick={handleModal}>cadastrar um novo item</button>
-          </p>
-        </div>
+        <CardRegisterItem
+          text="cadastrar um novo item"
+          handleModal={handleModal}
+        />
         {items.length > 0 ? (
           <HandleCardsLostAndFound
             items={items}

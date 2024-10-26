@@ -1,0 +1,14 @@
+.pets-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 14px;
+}
+
+.pets-container p.pets-not-found-message {
+    color: #fff;
+    font-family: Roboto;
+    text-align: center;
+    font-size: 16px;
+}
