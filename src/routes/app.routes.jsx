@@ -1,7 +1,6 @@
 import { Home, Calendar, RoomMap, LostAndFound, Uberona, Passenger, DriverDetails, Ifood, Driver, FormNewDriver, Pets } from '../ui/screens'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { FormNewDriver } from '../ui/screens/Uberona/Driver/FormNewDriver.jsx'
 
 export function AppRoutes() {
   return (
