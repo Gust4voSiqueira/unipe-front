@@ -18,13 +18,18 @@ import CalendarIcon from '../../../assets/calendar-icon.svg'
 import LostIcon from '../../../assets/lost-icon.svg'
 import PetsIcon from '../../../assets/pets-icon.svg'
 import MentoringIcon from '../../../assets/mentoring-icon.svg'
+import { useUberona } from '../../../hooks/useUberona'
+import { DriverContext } from '../../../contexts/DriverContext'
 
 export function Home() {
   const [user, setUser] = useState({})
+  const { isExistsCarRegistered } = useUberona()
   const { removeToken } = useContext(TokenContext)
+  const { addDriver, removeDriver } = useContext(DriverContext)
   const { myUser } = useUser()
 
   function handleLoggout() {
+    removeDriver()
     removeToken()
   }
 

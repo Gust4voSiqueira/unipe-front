@@ -1,7 +1,7 @@
 import './styles.css'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Header, ModalSelectedCity } from '../../../../components'
 import { PencilSimple } from '@phosphor-icons/react'
@@ -10,6 +10,9 @@ import { FormControlLabel, Checkbox } from '@mui/material'
 import { useUberona } from '../../../../../hooks/useUberona'
 import { isErrorInput } from '../../../../../utils/isErrorInput'
 import { DAYS_OF_WEEK } from '../../../../../utils/const'
+
+import { DriverContext } from '../../../../../contexts/DriverContext'
+import { Loading } from '../../../Loading'
 
 const createDriverFormSchema = z.object({
   neighborhood: z.string().min(5, 'O bairro deve ter no mínimo 5 caracteres.'),
@@ -21,18 +24,48 @@ const createDriverFormSchema = z.object({
 
 export function FormNewDriver() {
   const navigate = useNavigate()
-  const { createNewDriver } = useUberona()
+  const { driver, addDriver } = useContext(DriverContext)
+
+  const { createNewDriver, isExistsCarRegistered, editDriver } = useUberona()
   const [openModal, setOpenModal] = useState(false)
-  const [selectedCity, setSelectedCity] = useState('Luziânia')
-  const [selectedDays, setSelectedDays] = useState([])
+  const [selectedCity, setSelectedCity] = useState(driver?.isExistsCarRegistered ? [...driver?.car?.city] : 'Luziânia')
+  const [selectedDays, setSelectedDays] = useState(driver?.isExistsCarRegistered ? [...driver?.car?.availableDays] : [])
+
+  async function getIsExistsCarRegistered() {
+    try {
+      const response = await isExistsCarRegistered()
+
+      addDriver(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getIsExistsCarRegistered()
+  }, [])
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm({
-    resolver: zodResolver(createDriverFormSchema),
+    resolver: zodResolver(createDriverFormSchema)
   })
+
+  useEffect(() => {
+    if(driver?.car) {
+      setValue('neighborhood', driver.car.neighborhood)
+      setValue('car', driver.car.car)
+      setValue('quantityVacancies', String(driver.car.quantityVacancies))
+      setValue('plate', driver.car.plate)
+      setValue('observation', driver.car.observation)
+
+      setSelectedCity(driver.car.city)
+      setSelectedDays(driver.car.availableDays)
+    }
+  }, [driver, setValue])
 
   const handleDayChange = useCallback((day, checked) => {
     setSelectedDays((prevSelectedDays) =>
@@ -48,7 +81,7 @@ export function FormNewDriver() {
   }, [])
 
   const handleCreateDriver = async (driverData) => {
-    if (selectedCity.length === 0) return
+    if (!selectedCity) return
 
     const newDriver = {
       ...driverData,
@@ -57,11 +90,16 @@ export function FormNewDriver() {
     }
 
     try {
-      await createNewDriver(newDriver)
+      driver.isExistsCarRegistered ? await editDriver(driver.car.id, newDriver) : await createNewDriver(newDriver)
+
       navigate('/uberona')
     } catch (error) {
       console.log(error)
     }
+  }
+
+  if(!driver) {
+    return <Loading />
   }
 
   return (

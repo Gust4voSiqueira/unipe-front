@@ -61,10 +61,36 @@ export const useUberona = () => {
     }
   }
 
+  async function deleteDriver(motoristId) {
+    try {
+      await api.delete(`/motorist/delete/${motoristId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+
+  async function editDriver(motoristId, motoristUpdated) {
+    try {
+      await api.put(`/motorist/edit/${motoristId}`, motoristUpdated,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+
   return {
     getDrivers,
     getDriverDetails,
     createNewDriver,
     isExistsCarRegistered,
+    deleteDriver,
+    editDriver
   }
 }
