@@ -85,6 +85,7 @@ export function FormNewDriver() {
 
     const newDriver = {
       ...driverData,
+      quantityVacancies: Number(driverData.quantityVacancies),
       days: selectedDays,
       city: selectedCity,
     }
