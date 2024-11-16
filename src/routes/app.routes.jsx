@@ -10,6 +10,7 @@ import {
   Driver,
   FormNewDriver,
   Pets,
+  Mentoring
 } from '../ui/screens'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -32,6 +33,7 @@ export function AppRoutes() {
         <Route exact path="/lostAndFound" element={<LostAndFound />} />
         <Route exact path="/pets" element={<Pets />} />
         <Route exact path="/ifood" element={<Ifood />} />
+        <Route exact path="/mentoring" element={<Mentoring />} />
       </Routes>
     </BrowserRouter>
   )

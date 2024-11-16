@@ -1,7 +1,7 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
 import {
-  CardItemAndPets,
+  CardItem,
   CardRegisterItem,
   Header,
   Loading,
@@ -11,7 +11,7 @@ import { useLostAndFound } from '../../../hooks/useLostAndFound'
 
 function HandleCardsLostAndFound({ items, removeItem }) {
   return items.map((item, index) => (
-    <CardItemAndPets
+    <CardItem
       key={index}
       itemId={item.id}
       title={item.item}

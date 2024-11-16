@@ -2,7 +2,7 @@ import { WhatsappLogo, Trash } from '@phosphor-icons/react'
 
 import './style.css'
 
-export function CardItemAndPets({
+export function CardItem({
   itemId,
   title,
   direction,
