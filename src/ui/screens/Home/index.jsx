@@ -124,7 +124,7 @@ export function Home() {
           title="MENTORIAS"
           image={MentoringIcon}
           externalLink={false}
-          link=""
+          link="/mentoring"
         />
       </div>
     </div>

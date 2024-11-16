@@ -1,6 +1,6 @@
 export { ButtonComponent } from './Button'
 export { CardDriverDetails } from './CardDriverDetails'
-export { CardItemAndPets } from './CardItemAndPets'
+export { CardItem } from './CardItem'
 export { CardRegisterItem } from './CardRegisterItem'
 export { CardHome } from './CardHome'
 export { CardIfood } from './CardIfood'

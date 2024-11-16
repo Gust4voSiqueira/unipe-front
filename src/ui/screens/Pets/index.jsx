@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Header } from '../../components/Header'
 import { usePets } from '../../../hooks/usePets'
 import { Loading } from '../../components/Loading'
-import { CardItemAndPets, CardRegisterItem } from '../../components'
+import { CardItem, CardRegisterItem } from '../../components'
 import { ModalPets } from '../../components/ModalPets'
 
 function HandleCardsPets(pets, deletePet) {
@@ -12,7 +12,7 @@ function HandleCardsPets(pets, deletePet) {
     return <p className="pets-not-found-message">Nenhum Pet encontrado.</p>
 
   return pets.map((pet) => (
-    <CardItemAndPets
+    <CardItem
       key={pet.id}
       title={pet.pet}
       direction={pet.description}
