@@ -75,7 +75,7 @@ export const useUberona = () => {
 
   async function editDriver(motoristId, motoristUpdated) {
     try {
-      await api.put(`/motorist/edit/${motoristId}`, motoristUpdated,{
+      await api.put(`/motorist/edit/${motoristId}`, motoristUpdated, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -91,6 +91,6 @@ export const useUberona = () => {
     createNewDriver,
     isExistsCarRegistered,
     deleteDriver,
-    editDriver
+    editDriver,
   }
 }

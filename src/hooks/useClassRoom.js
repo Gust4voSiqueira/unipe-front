@@ -3,13 +3,13 @@ import { useContext } from 'react'
 
 import { TokenContext } from '../contexts/TokenContext'
 
-export const usePets = () => {
+export const useClassRoom = () => {
   const api = useApi()
   const { token } = useContext(TokenContext)
 
-  async function listPets() {
+  async function listClassroom() {
     try {
-      const { data } = await api.get('/pet', {
+      const { data } = await api.get('/classroom', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -20,9 +20,9 @@ export const usePets = () => {
     }
   }
 
-  async function deletePet(petId) {
+  async function deleteClassroom(classroomId) {
     try {
-      await api.delete(`pet/delete/${petId}`, {
+      await api.delete(`classroom/delete/${classroomId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -32,9 +32,9 @@ export const usePets = () => {
     }
   }
 
-  async function createPet(pet) {
+  async function createClassroom(classroom) {
     try {
-      await api.post('pet/insert', pet, {
+      await api.post('classroom', classroom, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,8 +45,8 @@ export const usePets = () => {
   }
 
   return {
-    listPets,
-    deletePet,
-    createPet,
+    listClassroom,
+    deleteClassroom,
+    createClassroom,
   }
 }

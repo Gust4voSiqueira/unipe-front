@@ -118,7 +118,12 @@ export function Ifood() {
                 isOnline={foodInCurrentUser.isOnline}
                 updateStatus={onUpdateStatus}
               />
-            ) : <CardRegisterItem text="começar a vender" handleModal={() => setOpenModal(true)} />}
+            ) : (
+              <CardRegisterItem
+                text="começar a vender"
+                handleModal={() => setOpenModal(true)}
+              />
+            )}
 
             <div className="ifood-list-cards-container">
               <HandleCardsFood

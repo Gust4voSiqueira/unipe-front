@@ -1,0 +1,64 @@
+.classroom-modal-form-new-item {
+    display: flex;
+    flex-direction: column;
+  
+    margin: 14px 0;
+}
+
+.button-close-modal {
+    position: absolute;
+    right: 10px;
+    background-color: transparent;
+}
+  
+.classroom-modal-form-new-item span {
+    color: #8D8D99;
+    font-family: Roboto;
+    font-size: 14px;
+    margin: 5px 0 4px 2px; 
+}
+  
+.classroom-modal-form-new-item input {
+    height: 40px;
+    border-radius: 4px;
+    background-color: #171616;
+    color: #f4f4f4;
+    padding-left: 8px;
+    margin-bottom: 10px;
+    font-family: Roboto;
+}
+
+.classroom-modal-form-new-item .input-select {
+    background-color: #171616;
+    color: #fff;
+    text-align: center;
+    height: 40px;
+}
+
+.classroom-modal-form-new-item .input-option {
+    color: #fff;
+}
+
+.classroom-modal-form-new-item button {
+    height: 44px;
+    border-radius: 6px;
+    margin-top: 4px;
+    background-color: #00875F;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.classroom-modal-form-new-item button:disabled {
+    height: 48px;
+    border-radius: 6px;
+    background-color: #027150;
+}
+
+.classroom-modal-form-new-item button span {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 16px;
+    margin-right: 4px;
+}

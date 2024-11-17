@@ -28,7 +28,7 @@ export function Driver() {
     try {
       await deleteDriver(motoristId)
       removeDriver()
-      navigate("/uberona")
+      navigate('/uberona')
     } catch (error) {
       console.log(error)
     }
@@ -39,11 +39,15 @@ export function Driver() {
   }, [])
 
   useEffect(() => {
-    if (driver !== null && driver !== undefined && !driver.isExistsCarRegistered) {
+    if (
+      driver !== null &&
+      driver !== undefined &&
+      !driver.isExistsCarRegistered
+    ) {
       navigate('/driver/registerNewDriver')
     }
   }, [driver, navigate])
-  
+
   if (!driver?.isExistsCarRegistered) {
     return <Loading />
   }
@@ -57,17 +61,15 @@ export function Driver() {
             <h1>{driver?.car.car}</h1>
             <span>{driver?.car.plate}</span>
             <br />
-            <span>
-              {driver?.car.quantityVacancies} vagas
-            </span>
+            <span>{driver?.car.quantityVacancies} vagas</span>
           </div>
 
           <div className="driver-list-card-buttons-container">
             <button onClick={() => navigate('/driver/registerNewDriver')}>
-              <PencilSimple weight='fill' size={24} color="#C4C4CC" />
+              <PencilSimple weight="fill" size={24} color="#C4C4CC" />
             </button>
             <button onClick={() => handleDeleteDriver(driver?.car.id)}>
-              <Trash weight='fill' size={24} color="#C4C4CC" />
+              <Trash weight="fill" size={24} color="#C4C4CC" />
             </button>
           </div>
         </div>

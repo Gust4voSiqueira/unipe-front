@@ -34,7 +34,7 @@ export const useMentoring = () => {
 
   async function createMentoring(mentoring) {
     try {
-      await api.post('mentoring', mentoring,{
+      await api.post('mentoring', mentoring, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -47,6 +47,6 @@ export const useMentoring = () => {
   return {
     createMentoring,
     listMentorings,
-    deleteMentoring
+    deleteMentoring,
   }
 }
