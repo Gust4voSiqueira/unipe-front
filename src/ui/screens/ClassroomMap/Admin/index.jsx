@@ -11,8 +11,6 @@ import { useClassRoom } from '../../../../hooks/useClassRoom'
 export function RoomMapAdmin({ classrooms, isTeacher, createClassroom, deleteClassroom }) {
   const [isOpenModal, setIsOpenModal] = useState(false)
 
-  console.log(classrooms)
-
   return (
     <>
       <Header title="Mapa de sala" />
