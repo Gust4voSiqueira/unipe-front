@@ -6,21 +6,25 @@ import { useMentoring } from '../../../hooks/useMentoring'
 import { ModalRegisterMentoring } from '../../components/ModalRegisterMentoring'
 
 function HandleCardsMentoring(mentorings, deleteMentoring) {
-    if (mentorings.length === 0)
-      return <p className="mentorings-not-found-message">Nenhuma mentoria disponível.</p>
-  
-    return mentorings.map((mentoring) => (
-      <CardItem
-        key={mentoring.id}
-        title={mentoring.subject}
-        direction={mentoring.description}
-        phone={mentoring.phone}
-        isAddedByCurrentUser={mentoring.isAddedByCurrentUser}
-        itemId={mentoring.id}
-        removeItem={deleteMentoring}
-      />
-    ))
-  }
+  if (mentorings.length === 0)
+    return (
+      <p className="mentorings-not-found-message">
+        Nenhuma mentoria disponível.
+      </p>
+    )
+
+  return mentorings.map((mentoring) => (
+    <CardItem
+      key={mentoring.id}
+      title={mentoring.subject}
+      direction={mentoring.description}
+      phone={mentoring.phone}
+      isAddedByCurrentUser={mentoring.isAddedByCurrentUser}
+      itemId={mentoring.id}
+      removeItem={deleteMentoring}
+    />
+  ))
+}
 
 export function Mentoring() {
   const [mentorings, setMentorings] = useState([])
@@ -60,16 +64,27 @@ export function Mentoring() {
     getMentorings()
   }, [])
 
-    return (
-        <>
-        <Header title="Mentorias" />
-        <ModalRegisterMentoring  isOpen={isOpenModal} handleCloseModal={() => setIsOpenModal(false)} handleCreateMentoring={registerMentoring}  />
+  return (
+    <>
+      <Header title="Mentorias" />
+      <ModalRegisterMentoring
+        isOpen={isOpenModal}
+        handleCloseModal={() => setIsOpenModal(false)}
+        handleCreateMentoring={registerMentoring}
+      />
 
-        <div className="mentoring-container">
-            <CardRegisterItem text="começar a mentorar" handleModal={() => setIsOpenModal(true)} />
+      <div className="mentoring-container">
+        <CardRegisterItem
+          text="começar a mentorar"
+          handleModal={() => setIsOpenModal(true)}
+        />
 
-            {isLoading ? <Loading /> : HandleCardsMentoring(mentorings, removeMentoring)}
-        </div>
-        </>
-    )
+        {isLoading ? (
+          <Loading />
+        ) : (
+          HandleCardsMentoring(mentorings, removeMentoring)
+        )}
+      </div>
+    </>
+  )
 }

@@ -1,7 +1,6 @@
 import {
   Home,
   Calendar,
-  RoomMap,
   LostAndFound,
   Uberona,
   Passenger,
@@ -10,7 +9,8 @@ import {
   Driver,
   FormNewDriver,
   Pets,
-  Mentoring
+  Mentoring,
+  ClassroomMap,
 } from '../ui/screens'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -21,7 +21,7 @@ export function AppRoutes() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/calendar" element={<Calendar />} />
-        <Route exact path="/room" element={<RoomMap />} />
+        <Route exact path="/room" element={<ClassroomMap />} />
         <Route exact path="/uberona" element={<Uberona />} />
         <Route exact path="/passenger" element={<Passenger />} />
         <Route

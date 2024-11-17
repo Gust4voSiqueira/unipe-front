@@ -28,8 +28,12 @@ export function FormNewDriver() {
 
   const { createNewDriver, isExistsCarRegistered, editDriver } = useUberona()
   const [openModal, setOpenModal] = useState(false)
-  const [selectedCity, setSelectedCity] = useState(driver?.isExistsCarRegistered ? [...driver?.car?.city] : 'Luziânia')
-  const [selectedDays, setSelectedDays] = useState(driver?.isExistsCarRegistered ? [...driver?.car?.availableDays] : [])
+  const [selectedCity, setSelectedCity] = useState(
+    driver?.isExistsCarRegistered ? [...driver?.car?.city] : 'Luziânia',
+  )
+  const [selectedDays, setSelectedDays] = useState(
+    driver?.isExistsCarRegistered ? [...driver?.car?.availableDays] : [],
+  )
 
   async function getIsExistsCarRegistered() {
     try {
@@ -49,13 +53,13 @@ export function FormNewDriver() {
     register,
     handleSubmit,
     formState: { errors },
-    setValue
+    setValue,
   } = useForm({
-    resolver: zodResolver(createDriverFormSchema)
+    resolver: zodResolver(createDriverFormSchema),
   })
 
   useEffect(() => {
-    if(driver?.car) {
+    if (driver?.car) {
       setValue('neighborhood', driver.car.neighborhood)
       setValue('car', driver.car.car)
       setValue('quantityVacancies', String(driver.car.quantityVacancies))
@@ -91,7 +95,9 @@ export function FormNewDriver() {
     }
 
     try {
-      driver.isExistsCarRegistered ? await editDriver(driver.car.id, newDriver) : await createNewDriver(newDriver)
+      driver.isExistsCarRegistered
+        ? await editDriver(driver.car.id, newDriver)
+        : await createNewDriver(newDriver)
 
       navigate('/uberona')
     } catch (error) {
@@ -99,7 +105,7 @@ export function FormNewDriver() {
     }
   }
 
-  if(!driver) {
+  if (!driver) {
     return <Loading />
   }
 

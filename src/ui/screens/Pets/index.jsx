@@ -67,10 +67,17 @@ export function Pets() {
   return (
     <>
       <Header title="Doação de Pets" />
-      <ModalPets isOpen={isOpenModal} handleCloseModal={() => setIsOpenModal(false)} handleCreatePet={registerPet}  />
+      <ModalPets
+        isOpen={isOpenModal}
+        handleCloseModal={() => setIsOpenModal(false)}
+        handleCreatePet={registerPet}
+      />
 
       <div className="pets-container">
-        <CardRegisterItem text="cadastrar um novo Pet" handleModal={() => setIsOpenModal(true)} />
+        <CardRegisterItem
+          text="cadastrar um novo Pet"
+          handleModal={() => setIsOpenModal(true)}
+        />
 
         {isLoading ? <Loading /> : HandleCardsPets(pets, removePet)}
       </div>

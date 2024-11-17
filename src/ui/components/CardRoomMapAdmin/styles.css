@@ -1,0 +1,48 @@
+.card-room-map-admin-container{
+    width: 100%;
+    min-height: 90px;
+    background-color: #212223  ;
+    border-radius: 6px;
+    padding: 6px 16px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-room-map-admin-container .room-day{
+    color: #969595;
+  }
+  .card-room-map-admin-container .room-text{
+    color: #f8f4f4 ;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  .card-room-map-admin-container .icon{
+    font-size: 100px;
+    color: #d5d3d3 ;
+  }
+.button-and-room {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.button-and-room span {
+  color: #f8f4f4 ;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+  .card-room-map-admin-container .button-icon{
+    background-color: #FD4755 ;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
