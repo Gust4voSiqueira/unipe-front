@@ -6,7 +6,6 @@ import {
 } from '../../../components'
 import './styles.css'
 import { ModalClassroom } from '../../../components/ModalClassroom'
-import { useClassRoom } from '../../../../hooks/useClassRoom'
 
 export function RoomMapAdmin({ classrooms, isTeacher, createClassroom, deleteClassroom }) {
   const [isOpenModal, setIsOpenModal] = useState(false)

@@ -11,6 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ButtonComponent } from '../../components'
 import { useUser } from '../../../hooks/useUser'
 import { Alert } from '@mui/material'
+import { COURSES } from '../../../utils/const'
 
 function HandleError({ isError }) {
   return (
@@ -27,7 +28,6 @@ function HandleError({ isError }) {
 const createUserFormSchema = z.object({
   name: z.string().min(3),
   email: z.string().min(13).email(),
-  course: z.string().min(3),
   password: z.string().min(7),
   confirmPassword: z.string().min(7),
   phone: z
@@ -42,6 +42,7 @@ export function Register() {
   const navigate = useNavigate()
   const { login, registerUser } = useUser()
 
+  const [course, setCourse] = useState('Administração')
   const [isError, setIsError] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -64,7 +65,7 @@ export function Register() {
       setIsLoading(true)
       setIsError(false)
 
-      await registerUser(user)
+      await registerUser(user, course)
       await login(user)
       navigate('/')
     } catch (error) {
@@ -108,11 +109,9 @@ export function Register() {
         </InputMask>
 
         <span>Curso</span>
-        <input
-          type="text"
-          {...register('course')}
-          className={isErrorInput('course')}
-        />
+        <select name="days" className='input-select' value={course} onChange={e => setCourse(e.target.value)} >
+          {COURSES.map(course => <option value={course} className='input-option'>{course}</option>)}
+        </select>
 
         <span>Senha</span>
         <input

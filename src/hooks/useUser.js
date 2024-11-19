@@ -8,11 +8,16 @@ export const useUser = () => {
   const api = useApi()
   const { addToken, token } = useContext(TokenContext)
 
-  async function registerUser(userRegister) {
+  async function registerUser(userRegister, course) {
     try {
+      const user = {
+        ...userRegister,
+        course,
+        phone: formatPhoneNumber(userRegister.phone)
+      }
       const response = await api.post(
         '/auth/register',
-        { ...userRegister, phone: formatPhoneNumber(userRegister.phone) },
+        user,
         {
           headers: {
             'Content-type': 'application/json',

@@ -48,6 +48,17 @@
     text-decoration: none;
 }
 
+.form-register-container .input-select {
+    background-color: #29292E;
+    color: #fff;
+    text-align: center;
+    height: 40px;
+}
+
+.form-register-container .input-option {
+    color: #fff;
+}
+
 @media (min-width: 768px) {
     .register-container {
         flex-direction: row;
